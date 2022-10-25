@@ -90,6 +90,67 @@ class TopBar extends StatelessWidget {
   }
 }
 
+class ProductPage extends StatelessWidget {
+  const ProductPage(
+      {super.key,
+      required this.name,
+      required this.image,
+      required this.price});
+
+  final String name;
+  final String image;
+  final String price;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(name)),
+      body: Column(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    image,
+                  ),
+                  repeat: ImageRepeat.repeat,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(100)),
+                    child: Container(
+                      color: Colors.black87,
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        price,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Text(name),
+                ],
+              ),
+            ),
+          ),
+          Expanded(flex: 2, child: Column())
+        ],
+      ),
+    );
+  }
+}
+
 class PurshaseListWithBuilder extends StatelessWidget {
   const PurshaseListWithBuilder({super.key, required this.items});
 
@@ -152,51 +213,63 @@ class PurchaseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(15)),
-              child: Image.asset(
-                image,
-                width: 70,
-                height: 70,
+      child: InkWell(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+            return ProductPage(
+              name: name,
+              image: image,
+              price: price,
+            );
+          }));
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(15)),
+                child: Image.asset(
+                  image,
+                  width: 70,
+                  height: 70,
+                ),
               ),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Expanded(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ConstrainedBox(
-                    constraints:
-                        const BoxConstraints(maxWidth: 200, maxHeight: 100),
-                    child: Text(name, style: const TextStyle(fontSize: 18)),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        day,
-                        style: const TextStyle(color: Colors.grey),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      Text(price,
-                          style: const TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold))
-                    ],
-                  ),
-                ],
+              const SizedBox(
+                width: 10,
               ),
-            )
-          ],
+              Expanded(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ConstrainedBox(
+                      constraints:
+                          const BoxConstraints(maxWidth: 200, maxHeight: 100),
+                      child: Text(name, style: const TextStyle(fontSize: 18)),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          day,
+                          style: const TextStyle(color: Colors.grey),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        Text(price,
+                            style: const TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold))
+                      ],
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -208,12 +281,14 @@ class Product {
       {required this.image,
       required this.name,
       required this.price,
-      required this.day});
+      required this.day,
+      required this.description});
 
   final String image;
   final String name;
   final String price;
   final String day;
+  final String description;
 }
 
 var products = [
@@ -221,32 +296,42 @@ var products = [
       image: 'images/1.png',
       name: 'Cool headphones',
       price: '\$100',
-      day: 'today'),
+      day: 'today',
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum'),
   Product(
       image: 'images/2.jpg',
       name: 'Good headphones',
       price: '\$200',
-      day: 'tommorow'),
+      day: 'tommorow',
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum'),
   Product(
       image: 'images/3.jpg',
       name: 'Cool headphones',
       price: '\$300',
-      day: 'yesterday'),
+      day: 'yesterday',
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum'),
   Product(
       image: 'images/4.jpg',
       name: 'Very good headphones',
       price: '\$400',
-      day: 'never'),
+      day: 'never',
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum'),
   Product(
       image: 'images/5.jpg',
       name: 'Excellent headphones hhuhduh dwhduh',
       price: '\$500',
-      day: 'today'),
+      day: 'today',
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum'),
   Product(
       image: 'images/6.jpg',
       name: 'Marvelous headphones',
       price: '\$1000',
-      day: 'today'),
+      day: 'today',
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum'),
   Product(
-      image: 'images/7.jpg', name: 'Headphones', price: '\$1500', day: 'today')
+      image: 'images/7.jpg',
+      name: 'Headphones',
+      price: '\$1500',
+      day: 'today',
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum')
 ];
