@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Layout',
-      home: MyPage(title: 'Flutter Demo Home Page'),
+      home: MyPage(title: 'Flutter Dem Home Page'),
     );
   }
 }
@@ -24,7 +24,7 @@ class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void press() {
-      print('Pressed');
+      print('pressed');
     }
 
     return Scaffold(
@@ -32,7 +32,10 @@ class MyPage extends StatelessWidget {
         title: Text(title),
       ),
       body: Column(
-        children: [topBar, Expanded(child: purshaseList)],
+        children: [
+          const TopBar(),
+          Expanded(child: PurshaseListWithBuilder(items: products))
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: press,
@@ -42,78 +45,96 @@ class MyPage extends StatelessWidget {
   }
 }
 
-Widget topBar = Container(
-    height: 100,
-    padding: const EdgeInsets.fromLTRB(20, 20, 20, 5),
-    color: Colors.white,
-    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      const Text(
-        'Sales History',
-        textAlign: TextAlign.left,
-        style: TextStyle(fontSize: 20),
-      ),
-      const SizedBox(
-        height: 20,
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.indigo.shade600),
-                borderRadius: BorderRadius.circular(5)),
-            child: Icon(
-              Icons.filter_alt,
-              color: Colors.indigo[600],
-            ),
+class TopBar extends StatelessWidget {
+  const TopBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: 100,
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 5),
+        color: Colors.white,
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const Text(
+            'Sales History',
+            textAlign: TextAlign.left,
+            style: TextStyle(fontSize: 20),
+          ),
+          const SizedBox(
+            height: 20,
           ),
           Row(
-            children: const [
-              Padding(
-                padding: EdgeInsets.only(right: 20),
-                child: Text('Last week'),
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.indigo.shade600),
+                    borderRadius: BorderRadius.circular(5)),
+                child: Icon(
+                  Icons.filter_alt,
+                  color: Colors.indigo[600],
+                ),
               ),
-              Icon(Icons.expand_more)
+              Row(
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.only(right: 20),
+                    child: Text('Last week'),
+                  ),
+                  Icon(Icons.expand_more)
+                ],
+              )
             ],
-          )
-        ],
-      ),
-    ]));
+          ),
+        ]));
+  }
+}
 
-Widget purshaseList = ListView(children: const [
-  PurchaseCard(
-      image: 'images/1.png',
-      price: '\$100',
-      name: 'Cool headphones',
-      day: 'today'),
-  PurchaseCard(
-      image: 'images/2.jpg',
-      price: '\$200',
-      name: 'Good headphones',
-      day: 'tommorow'),
-  PurchaseCard(
-      image: 'images/3.jpg',
-      price: '\$300',
-      name: 'Very good headphones',
-      day: 'yesterday'),
-  PurchaseCard(
-      image: 'images/4.jpg',
-      price: '\$400',
-      name: 'Excellent headphones hhuhduh dwhduh',
-      day: 'never'),
-  PurchaseCard(
-      image: 'images/5.jpg',
-      price: '\$500',
-      name: 'Marvelous headphones',
-      day: 'today'),
-  PurchaseCard(
-      image: 'images/6.jpg',
-      price: '\$1000',
-      name: 'Just headphones',
-      day: 'today'),
-  PurchaseCard(
-      image: 'images/7.jpg', price: '\$1500', name: 'Headphones', day: 'today'),
-]);
+class PurshaseListWithBuilder extends StatelessWidget {
+  const PurshaseListWithBuilder({super.key, required this.items});
+
+  final List<Product> items;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: items.length,
+      prototypeItem: PurchaseCard(
+          image: items.first.image,
+          name: items.first.name,
+          price: items.first.price,
+          day: items.first.day),
+      itemBuilder: (context, index) {
+        return PurchaseCard(
+            image: items[index].image,
+            name: items[index].name,
+            price: items[index].price,
+            day: items[index].day);
+      },
+    );
+  }
+}
+
+class PurshaseListWithSeparated extends StatelessWidget {
+  const PurshaseListWithSeparated({super.key, required this.items});
+
+  final List<Product> items;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.separated(
+      itemCount: items.length,
+      separatorBuilder: (context, index) => const Divider(),
+      itemBuilder: (context, index) {
+        return PurchaseCard(
+            image: items[index].image,
+            name: items[index].name,
+            price: items[index].price,
+            day: items[index].day);
+      },
+    );
+  }
+}
 
 class PurchaseCard extends StatelessWidget {
   const PurchaseCard(
@@ -137,25 +158,26 @@ class PurchaseCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: const BorderRadius.all(Radius.circular(15)),
               child: Image.asset(
                 image,
                 width: 70,
                 height: 70,
               ),
             ),
+            const SizedBox(
+              width: 10,
+            ),
             Expanded(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Container(
-                        constraints:
-                            const BoxConstraints(maxWidth: 200, maxHeight: 100),
-                        child: Text(name, style: const TextStyle(fontSize: 18)),
-                      )),
+                  ConstrainedBox(
+                    constraints:
+                        const BoxConstraints(maxWidth: 200, maxHeight: 100),
+                    child: Text(name, style: const TextStyle(fontSize: 18)),
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -180,3 +202,51 @@ class PurchaseCard extends StatelessWidget {
     );
   }
 }
+
+class Product {
+  Product(
+      {required this.image,
+      required this.name,
+      required this.price,
+      required this.day});
+
+  final String image;
+  final String name;
+  final String price;
+  final String day;
+}
+
+var products = [
+  Product(
+      image: 'images/1.png',
+      name: 'Cool headphones',
+      price: '\$100',
+      day: 'today'),
+  Product(
+      image: 'images/2.jpg',
+      name: 'Good headphones',
+      price: '\$200',
+      day: 'tommorow'),
+  Product(
+      image: 'images/3.jpg',
+      name: 'Cool headphones',
+      price: '\$300',
+      day: 'yesterday'),
+  Product(
+      image: 'images/4.jpg',
+      name: 'Very good headphones',
+      price: '\$400',
+      day: 'never'),
+  Product(
+      image: 'images/5.jpg',
+      name: 'Excellent headphones hhuhduh dwhduh',
+      price: '\$500',
+      day: 'today'),
+  Product(
+      image: 'images/6.jpg',
+      name: 'Marvelous headphones',
+      price: '\$1000',
+      day: 'today'),
+  Product(
+      image: 'images/7.jpg', name: 'Headphones', price: '\$1500', day: 'today')
+];
