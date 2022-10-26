@@ -91,31 +91,25 @@ class TopBar extends StatelessWidget {
 }
 
 class ProductPage extends StatelessWidget {
-  const ProductPage(
-      {super.key,
-      required this.name,
-      required this.image,
-      required this.price});
+  const ProductPage({super.key, required this.product});
 
-  final String name;
-  final String image;
-  final String price;
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(name)),
+      appBar: AppBar(title: Text(product.name)),
       body: Column(
         children: [
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    image,
+                    product.image,
                   ),
                   repeat: ImageRepeat.repeat,
                 ),
@@ -128,10 +122,10 @@ class ProductPage extends StatelessWidget {
                     borderRadius: const BorderRadius.all(Radius.circular(100)),
                     child: Container(
                       color: Colors.black87,
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: Text(
-                        price,
-                        style: TextStyle(
+                        product.price,
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -139,12 +133,51 @@ class ProductPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text(name),
+                  Text(
+                    product.name,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
                 ],
               ),
             ),
           ),
-          Expanded(flex: 2, child: Column())
+          Expanded(
+              flex: 3,
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const Text(
+                      'Description:',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
+                    Text(
+                      product.description,
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Wrap(spacing: 10, runSpacing: 5, children: [
+                      for (var label in product.labels)
+                        ClipRRect(
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(30)),
+                          child: Container(
+                            color: Colors.grey[400],
+                            padding: const EdgeInsets.all(10),
+                            child: Text(label,
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.grey[700])),
+                          ),
+                        ),
+                    ])
+                  ],
+                ),
+              ))
         ],
       ),
     );
@@ -161,16 +194,12 @@ class PurshaseListWithBuilder extends StatelessWidget {
     return ListView.builder(
       itemCount: items.length,
       prototypeItem: PurchaseCard(
-          image: items.first.image,
-          name: items.first.name,
-          price: items.first.price,
-          day: items.first.day),
+        product: items.first,
+      ),
       itemBuilder: (context, index) {
         return PurchaseCard(
-            image: items[index].image,
-            name: items[index].name,
-            price: items[index].price,
-            day: items[index].day);
+          product: items[index],
+        );
       },
     );
   }
@@ -188,27 +217,20 @@ class PurshaseListWithSeparated extends StatelessWidget {
       separatorBuilder: (context, index) => const Divider(),
       itemBuilder: (context, index) {
         return PurchaseCard(
-            image: items[index].image,
-            name: items[index].name,
-            price: items[index].price,
-            day: items[index].day);
+          product: items[index],
+        );
       },
     );
   }
 }
 
 class PurchaseCard extends StatelessWidget {
-  const PurchaseCard(
-      {super.key,
-      required this.image,
-      required this.name,
-      required this.price,
-      required this.day});
+  const PurchaseCard({
+    super.key,
+    required this.product,
+  });
 
-  final String image;
-  final String name;
-  final String price;
-  final String day;
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -218,9 +240,7 @@ class PurchaseCard extends StatelessWidget {
           Navigator.push(context,
               MaterialPageRoute(builder: (BuildContext context) {
             return ProductPage(
-              name: name,
-              image: image,
-              price: price,
+              product: product,
             );
           }));
         },
@@ -232,7 +252,7 @@ class PurchaseCard extends StatelessWidget {
               ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(15)),
                 child: Image.asset(
-                  image,
+                  product.image,
                   width: 70,
                   height: 70,
                 ),
@@ -248,19 +268,20 @@ class PurchaseCard extends StatelessWidget {
                     ConstrainedBox(
                       constraints:
                           const BoxConstraints(maxWidth: 200, maxHeight: 100),
-                      child: Text(name, style: const TextStyle(fontSize: 18)),
+                      child: Text(product.name,
+                          style: const TextStyle(fontSize: 18)),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          day,
+                          product.day,
                           style: const TextStyle(color: Colors.grey),
                         ),
                         const SizedBox(
                           height: 30,
                         ),
-                        Text(price,
+                        Text(product.price,
                             style: const TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold))
                       ],
@@ -282,13 +303,15 @@ class Product {
       required this.name,
       required this.price,
       required this.day,
-      required this.description});
+      required this.description,
+      required this.labels});
 
   final String image;
   final String name;
   final String price;
   final String day;
   final String description;
+  final List<String> labels;
 }
 
 var products = [
@@ -297,41 +320,49 @@ var products = [
       name: 'Cool headphones',
       price: '\$100',
       day: 'today',
-      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum'),
+      description:
+          'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum Lorem ipsum dollor amen amen carpe diem cogeto ergo sum',
+      labels: ['headphones', 'dr.dre', 'audio', 'music', 'somethig', '1234']),
   Product(
       image: 'images/2.jpg',
       name: 'Good headphones',
       price: '\$200',
       day: 'tommorow',
-      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum'),
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum',
+      labels: ['headphones', 'dr.dre', 'audio', 'music', 'somethig', '1234']),
   Product(
       image: 'images/3.jpg',
       name: 'Cool headphones',
       price: '\$300',
       day: 'yesterday',
-      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum'),
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum',
+      labels: ['headphones', 'dr.dre', 'audio', 'music', 'somethig', '1234']),
   Product(
       image: 'images/4.jpg',
       name: 'Very good headphones',
       price: '\$400',
       day: 'never',
-      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum'),
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum',
+      labels: ['headphones', 'dr.dre', 'audio', 'music', 'somethig', '1234']),
   Product(
       image: 'images/5.jpg',
       name: 'Excellent headphones hhuhduh dwhduh',
       price: '\$500',
       day: 'today',
-      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum'),
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum',
+      labels: ['headphones', 'dr.dre', 'audio', 'music', 'somethig', '1234']),
   Product(
       image: 'images/6.jpg',
       name: 'Marvelous headphones',
       price: '\$1000',
       day: 'today',
-      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum'),
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum',
+      labels: ['headphones', 'dr.dre', 'audio', 'music', 'somethig', '1234']),
   Product(
       image: 'images/7.jpg',
       name: 'Headphones',
       price: '\$1500',
       day: 'today',
-      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum')
+      description: 'Lorem ipsum dollor amen amen carpe diem cogeto ergo sum',
+      labels: ['headphones', 'dr.dre', 'audio', 'music', 'somethig', '1234'])
 ];
