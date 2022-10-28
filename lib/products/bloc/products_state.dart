@@ -6,5 +6,6 @@ enum ProductsStatus { initial, loaded, searched }
 class ProductsState with _$ProductsState {
   const factory ProductsState(
       {@Default(ProductsStatus.initial) ProductsStatus status,
-      @Default(<Product>[]) List<Product> products}) = _ProductsState;
+      @Default(<Product>[]) List<Product> products,
+      @Default(<Product>[]) List<Product> filteredProducts}) = _ProductsState;
 }

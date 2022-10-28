@@ -1,3 +1,5 @@
+import 'package:injectable/injectable.dart';
+
 abstract class ProductsRepository {
   Future<List<Product>> getProducts();
 }
@@ -19,6 +21,7 @@ class Product {
   final List<String> labels;
 }
 
+@lazySingleton
 class LocalProductsRepository implements ProductsRepository {
   @override
   Future<List<Product>> getProducts() async {

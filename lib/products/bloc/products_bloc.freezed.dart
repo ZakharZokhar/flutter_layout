@@ -224,6 +224,7 @@ abstract class _ProductsSearchStringChanged
 mixin _$ProductsState {
   ProductsStatus get status => throw _privateConstructorUsedError;
   List<Product> get products => throw _privateConstructorUsedError;
+  List<Product> get filteredProducts => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductsStateCopyWith<ProductsState> get copyWith =>
@@ -236,7 +237,10 @@ abstract class $ProductsStateCopyWith<$Res> {
           ProductsState value, $Res Function(ProductsState) then) =
       _$ProductsStateCopyWithImpl<$Res, ProductsState>;
   @useResult
-  $Res call({ProductsStatus status, List<Product> products});
+  $Res call(
+      {ProductsStatus status,
+      List<Product> products,
+      List<Product> filteredProducts});
 }
 
 /// @nodoc
@@ -254,6 +258,7 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
   $Res call({
     Object? status = null,
     Object? products = null,
+    Object? filteredProducts = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
@@ -263,6 +268,10 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
       products: null == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
+              as List<Product>,
+      filteredProducts: null == filteredProducts
+          ? _value.filteredProducts
+          : filteredProducts // ignore: cast_nullable_to_non_nullable
               as List<Product>,
     ) as $Val);
   }
@@ -276,7 +285,10 @@ abstract class _$$_ProductsStateCopyWith<$Res>
       __$$_ProductsStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ProductsStatus status, List<Product> products});
+  $Res call(
+      {ProductsStatus status,
+      List<Product> products,
+      List<Product> filteredProducts});
 }
 
 /// @nodoc
@@ -292,6 +304,7 @@ class __$$_ProductsStateCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
     Object? products = null,
+    Object? filteredProducts = null,
   }) {
     return _then(_$_ProductsState(
       status: null == status
@@ -302,6 +315,10 @@ class __$$_ProductsStateCopyWithImpl<$Res>
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
               as List<Product>,
+      filteredProducts: null == filteredProducts
+          ? _value._filteredProducts
+          : filteredProducts // ignore: cast_nullable_to_non_nullable
+              as List<Product>,
     ));
   }
 }
@@ -311,8 +328,10 @@ class __$$_ProductsStateCopyWithImpl<$Res>
 class _$_ProductsState with DiagnosticableTreeMixin implements _ProductsState {
   const _$_ProductsState(
       {this.status = ProductsStatus.initial,
-      final List<Product> products = const <Product>[]})
-      : _products = products;
+      final List<Product> products = const <Product>[],
+      final List<Product> filteredProducts = const <Product>[]})
+      : _products = products,
+        _filteredProducts = filteredProducts;
 
   @override
   @JsonKey()
@@ -325,9 +344,17 @@ class _$_ProductsState with DiagnosticableTreeMixin implements _ProductsState {
     return EqualUnmodifiableListView(_products);
   }
 
+  final List<Product> _filteredProducts;
+  @override
+  @JsonKey()
+  List<Product> get filteredProducts {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_filteredProducts);
+  }
+
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProductsState(status: $status, products: $products)';
+    return 'ProductsState(status: $status, products: $products, filteredProducts: $filteredProducts)';
   }
 
   @override
@@ -336,7 +363,8 @@ class _$_ProductsState with DiagnosticableTreeMixin implements _ProductsState {
     properties
       ..add(DiagnosticsProperty('type', 'ProductsState'))
       ..add(DiagnosticsProperty('status', status))
-      ..add(DiagnosticsProperty('products', products));
+      ..add(DiagnosticsProperty('products', products))
+      ..add(DiagnosticsProperty('filteredProducts', filteredProducts));
   }
 
   @override
@@ -345,12 +373,17 @@ class _$_ProductsState with DiagnosticableTreeMixin implements _ProductsState {
         (other.runtimeType == runtimeType &&
             other is _$_ProductsState &&
             (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other._products, _products));
+            const DeepCollectionEquality().equals(other._products, _products) &&
+            const DeepCollectionEquality()
+                .equals(other._filteredProducts, _filteredProducts));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, status, const DeepCollectionEquality().hash(_products));
+      runtimeType,
+      status,
+      const DeepCollectionEquality().hash(_products),
+      const DeepCollectionEquality().hash(_filteredProducts));
 
   @JsonKey(ignore: true)
   @override
@@ -362,12 +395,15 @@ class _$_ProductsState with DiagnosticableTreeMixin implements _ProductsState {
 abstract class _ProductsState implements ProductsState {
   const factory _ProductsState(
       {final ProductsStatus status,
-      final List<Product> products}) = _$_ProductsState;
+      final List<Product> products,
+      final List<Product> filteredProducts}) = _$_ProductsState;
 
   @override
   ProductsStatus get status;
   @override
   List<Product> get products;
+  @override
+  List<Product> get filteredProducts;
   @override
   @JsonKey(ignore: true)
   _$$_ProductsStateCopyWith<_$_ProductsState> get copyWith =>
