@@ -11,7 +11,8 @@ part 'products_bloc.freezed.dart';
 
 @injectable
 class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
-  ProductsBloc({required this.productsRep}) : super(const ProductsState()) {
+  ProductsBloc({required this.productsRep})
+      : super(const ProductsState.initial()) {
     on<ProductsInitialized>(_onProductsFetched);
     on<ProductsSearchStringChanged>(_onProductsFiltered);
   }
@@ -21,18 +22,27 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
   Future<void> _onProductsFetched(
       ProductsInitialized event, Emitter<ProductsState> emit) async {
     final products = await productsRep.getProducts();
-    emit(state.copyWith(
-        status: ProductsStatus.loaded,
-        products: products,
-        filteredProducts: products));
+    state.map(
+        initial: (state) => emit(ProductsState.loaded(products)),
+        loaded: ((state) => emit(state.copyWith())),
+        searched: ((state) => emit(state.copyWith())));
   }
 
   void _onProductsFiltered(
       ProductsSearchStringChanged event, Emitter<ProductsState> emit) {
-    emit(state.copyWith(
-        status: ProductsStatus.searched,
-        filteredProducts: state.products
-            .where((product) => product.name.contains(event.searchString))
-            .toList()));
+    state.map(
+        initial: ((state) => (state)),
+        loaded: ((state) => emit(ProductsState.searched(
+            state.products,
+            state.products
+                .where((product) => product.name.contains(event.searchString))
+                .toList(),
+            event.searchString))),
+        searched: ((state) => emit(ProductsState.searched(
+            state.products,
+            state.products
+                .where((product) => product.name.contains(event.searchString))
+                .toList(),
+            event.searchString))));
   }
 }

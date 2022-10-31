@@ -9,50 +9,82 @@ class PurchaseListWithBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProductsBloc, ProductsState>(builder: (context, state) {
-      switch (state.status) {
-        case ProductsStatus.initial:
-          return const Center(child: CircularProgressIndicator());
-        case ProductsStatus.loaded:
-        case ProductsStatus.searched:
-          return Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(20),
-                color: Colors.white,
-                child: TextField(
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Search',
+      return state.when(
+          initial: (() => const Center(child: CircularProgressIndicator())),
+          loaded: ((products) => Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    color: Colors.white,
+                    child: TextField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Search',
+                      ),
+                      onChanged: (search) {
+                        context.read<ProductsBloc>().add(
+                            ProductsSearchStringChanged(searchString: search));
+                      },
+                    ),
                   ),
-                  onChanged: (search) {
-                    context
-                        .read<ProductsBloc>()
-                        .add(ProductsSearchStringChanged(searchString: search));
-                  },
-                ),
-              ),
-              Expanded(
-                child: state.filteredProducts.isNotEmpty
-                    ? ListView.builder(
-                        itemCount: state.filteredProducts.length,
-                        prototypeItem: PurchaseCard(
-                          product: state.filteredProducts.first,
-                        ),
-                        itemBuilder: (context, index) {
-                          return PurchaseCard(
-                            product: state.filteredProducts[index],
-                          );
-                        },
-                      )
-                    : const Center(
-                        child: Text(
-                        'Nothing was found',
-                        style: TextStyle(fontSize: 20),
-                      )),
-              ),
-            ],
-          );
-      }
+                  Expanded(
+                    child: products.isNotEmpty
+                        ? ListView.builder(
+                            itemCount: products.length,
+                            prototypeItem: PurchaseCard(
+                              product: products.first,
+                            ),
+                            itemBuilder: (context, index) {
+                              return PurchaseCard(
+                                product: products[index],
+                              );
+                            },
+                          )
+                        : const Center(
+                            child: Text(
+                            'Nothing was found',
+                            style: TextStyle(fontSize: 20),
+                          )),
+                  ),
+                ],
+              )),
+          searched: ((products, filteredProducts, searchString) => Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    color: Colors.white,
+                    child: TextField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Search',
+                      ),
+                      onChanged: (search) {
+                        context.read<ProductsBloc>().add(
+                            ProductsSearchStringChanged(searchString: search));
+                      },
+                    ),
+                  ),
+                  Expanded(
+                    child: filteredProducts.isNotEmpty
+                        ? ListView.builder(
+                            itemCount: filteredProducts.length,
+                            prototypeItem: PurchaseCard(
+                              product: filteredProducts.first,
+                            ),
+                            itemBuilder: (context, index) {
+                              return PurchaseCard(
+                                product: filteredProducts[index],
+                              );
+                            },
+                          )
+                        : const Center(
+                            child: Text(
+                            'Nothing was found',
+                            style: TextStyle(fontSize: 20),
+                          )),
+                  ),
+                ],
+              )));
     });
   }
 }

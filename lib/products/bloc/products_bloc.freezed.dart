@@ -222,12 +222,55 @@ abstract class _ProductsSearchStringChanged
 
 /// @nodoc
 mixin _$ProductsState {
-  ProductsStatus get status => throw _privateConstructorUsedError;
-  List<Product> get products => throw _privateConstructorUsedError;
-  List<Product> get filteredProducts => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ProductsStateCopyWith<ProductsState> get copyWith =>
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Product> products) loaded,
+    required TResult Function(List<Product> products,
+            List<Product> filteredProducts, String searchString)
+        searched,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(List<Product> products)? loaded,
+    TResult? Function(List<Product> products, List<Product> filteredProducts,
+            String searchString)?
+        searched,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Product> products)? loaded,
+    TResult Function(List<Product> products, List<Product> filteredProducts,
+            String searchString)?
+        searched,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(Searched value) searched,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Searched value)? searched,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Searched value)? searched,
+    required TResult orElse(),
+  }) =>
       throw _privateConstructorUsedError;
 }
 
@@ -236,11 +279,6 @@ abstract class $ProductsStateCopyWith<$Res> {
   factory $ProductsStateCopyWith(
           ProductsState value, $Res Function(ProductsState) then) =
       _$ProductsStateCopyWithImpl<$Res, ProductsState>;
-  @useResult
-  $Res call(
-      {ProductsStatus status,
-      List<Product> products,
-      List<Product> filteredProducts});
 }
 
 /// @nodoc
@@ -252,72 +290,150 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
 
-  @pragma('vm:prefer-inline')
+/// @nodoc
+abstract class _$$InitialCopyWith<$Res> {
+  factory _$$InitialCopyWith(_$Initial value, $Res Function(_$Initial) then) =
+      __$$InitialCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitialCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$Initial>
+    implements _$$InitialCopyWith<$Res> {
+  __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$Initial with DiagnosticableTreeMixin implements Initial {
+  const _$Initial();
+
   @override
-  $Res call({
-    Object? status = null,
-    Object? products = null,
-    Object? filteredProducts = null,
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ProductsState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'ProductsState.initial'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$Initial);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Product> products) loaded,
+    required TResult Function(List<Product> products,
+            List<Product> filteredProducts, String searchString)
+        searched,
   }) {
-    return _then(_value.copyWith(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as ProductsStatus,
-      products: null == products
-          ? _value.products
-          : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
-      filteredProducts: null == filteredProducts
-          ? _value.filteredProducts
-          : filteredProducts // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
-    ) as $Val);
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(List<Product> products)? loaded,
+    TResult? Function(List<Product> products, List<Product> filteredProducts,
+            String searchString)?
+        searched,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Product> products)? loaded,
+    TResult Function(List<Product> products, List<Product> filteredProducts,
+            String searchString)?
+        searched,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(Searched value) searched,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Searched value)? searched,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Searched value)? searched,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
   }
 }
 
-/// @nodoc
-abstract class _$$_ProductsStateCopyWith<$Res>
-    implements $ProductsStateCopyWith<$Res> {
-  factory _$$_ProductsStateCopyWith(
-          _$_ProductsState value, $Res Function(_$_ProductsState) then) =
-      __$$_ProductsStateCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {ProductsStatus status,
-      List<Product> products,
-      List<Product> filteredProducts});
+abstract class Initial implements ProductsState {
+  const factory Initial() = _$Initial;
 }
 
 /// @nodoc
-class __$$_ProductsStateCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$_ProductsState>
-    implements _$$_ProductsStateCopyWith<$Res> {
-  __$$_ProductsStateCopyWithImpl(
-      _$_ProductsState _value, $Res Function(_$_ProductsState) _then)
+abstract class _$$LoadedCopyWith<$Res> {
+  factory _$$LoadedCopyWith(_$Loaded value, $Res Function(_$Loaded) then) =
+      __$$LoadedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Product> products});
+}
+
+/// @nodoc
+class __$$LoadedCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$Loaded>
+    implements _$$LoadedCopyWith<$Res> {
+  __$$LoadedCopyWithImpl(_$Loaded _value, $Res Function(_$Loaded) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = null,
     Object? products = null,
-    Object? filteredProducts = null,
   }) {
-    return _then(_$_ProductsState(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as ProductsStatus,
-      products: null == products
+    return _then(_$Loaded(
+      null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
-      filteredProducts: null == filteredProducts
-          ? _value._filteredProducts
-          : filteredProducts // ignore: cast_nullable_to_non_nullable
               as List<Product>,
     ));
   }
@@ -325,20 +441,184 @@ class __$$_ProductsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ProductsState with DiagnosticableTreeMixin implements _ProductsState {
-  const _$_ProductsState(
-      {this.status = ProductsStatus.initial,
-      final List<Product> products = const <Product>[],
-      final List<Product> filteredProducts = const <Product>[]})
+class _$Loaded with DiagnosticableTreeMixin implements Loaded {
+  const _$Loaded(final List<Product> products) : _products = products;
+
+  final List<Product> _products;
+  @override
+  List<Product> get products {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_products);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ProductsState.loaded(products: $products)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ProductsState.loaded'))
+      ..add(DiagnosticsProperty('products', products));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$Loaded &&
+            const DeepCollectionEquality().equals(other._products, _products));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_products));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadedCopyWith<_$Loaded> get copyWith =>
+      __$$LoadedCopyWithImpl<_$Loaded>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Product> products) loaded,
+    required TResult Function(List<Product> products,
+            List<Product> filteredProducts, String searchString)
+        searched,
+  }) {
+    return loaded(products);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(List<Product> products)? loaded,
+    TResult? Function(List<Product> products, List<Product> filteredProducts,
+            String searchString)?
+        searched,
+  }) {
+    return loaded?.call(products);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Product> products)? loaded,
+    TResult Function(List<Product> products, List<Product> filteredProducts,
+            String searchString)?
+        searched,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(products);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(Searched value) searched,
+  }) {
+    return loaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Searched value)? searched,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Searched value)? searched,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Loaded implements ProductsState {
+  const factory Loaded(final List<Product> products) = _$Loaded;
+
+  List<Product> get products;
+  @JsonKey(ignore: true)
+  _$$LoadedCopyWith<_$Loaded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchedCopyWith<$Res> {
+  factory _$$SearchedCopyWith(
+          _$Searched value, $Res Function(_$Searched) then) =
+      __$$SearchedCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {List<Product> products,
+      List<Product> filteredProducts,
+      String searchString});
+}
+
+/// @nodoc
+class __$$SearchedCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$Searched>
+    implements _$$SearchedCopyWith<$Res> {
+  __$$SearchedCopyWithImpl(_$Searched _value, $Res Function(_$Searched) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? products = null,
+    Object? filteredProducts = null,
+    Object? searchString = null,
+  }) {
+    return _then(_$Searched(
+      null == products
+          ? _value._products
+          : products // ignore: cast_nullable_to_non_nullable
+              as List<Product>,
+      null == filteredProducts
+          ? _value._filteredProducts
+          : filteredProducts // ignore: cast_nullable_to_non_nullable
+              as List<Product>,
+      null == searchString
+          ? _value.searchString
+          : searchString // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$Searched with DiagnosticableTreeMixin implements Searched {
+  const _$Searched(final List<Product> products,
+      final List<Product> filteredProducts, this.searchString)
       : _products = products,
         _filteredProducts = filteredProducts;
 
-  @override
-  @JsonKey()
-  final ProductsStatus status;
   final List<Product> _products;
   @override
-  @JsonKey()
   List<Product> get products {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_products);
@@ -346,66 +626,139 @@ class _$_ProductsState with DiagnosticableTreeMixin implements _ProductsState {
 
   final List<Product> _filteredProducts;
   @override
-  @JsonKey()
   List<Product> get filteredProducts {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_filteredProducts);
   }
 
   @override
+  final String searchString;
+
+  @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProductsState(status: $status, products: $products, filteredProducts: $filteredProducts)';
+    return 'ProductsState.searched(products: $products, filteredProducts: $filteredProducts, searchString: $searchString)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ProductsState'))
-      ..add(DiagnosticsProperty('status', status))
+      ..add(DiagnosticsProperty('type', 'ProductsState.searched'))
       ..add(DiagnosticsProperty('products', products))
-      ..add(DiagnosticsProperty('filteredProducts', filteredProducts));
+      ..add(DiagnosticsProperty('filteredProducts', filteredProducts))
+      ..add(DiagnosticsProperty('searchString', searchString));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProductsState &&
-            (identical(other.status, status) || other.status == status) &&
+            other is _$Searched &&
             const DeepCollectionEquality().equals(other._products, _products) &&
             const DeepCollectionEquality()
-                .equals(other._filteredProducts, _filteredProducts));
+                .equals(other._filteredProducts, _filteredProducts) &&
+            (identical(other.searchString, searchString) ||
+                other.searchString == searchString));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      status,
       const DeepCollectionEquality().hash(_products),
-      const DeepCollectionEquality().hash(_filteredProducts));
+      const DeepCollectionEquality().hash(_filteredProducts),
+      searchString);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProductsStateCopyWith<_$_ProductsState> get copyWith =>
-      __$$_ProductsStateCopyWithImpl<_$_ProductsState>(this, _$identity);
+  _$$SearchedCopyWith<_$Searched> get copyWith =>
+      __$$SearchedCopyWithImpl<_$Searched>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Product> products) loaded,
+    required TResult Function(List<Product> products,
+            List<Product> filteredProducts, String searchString)
+        searched,
+  }) {
+    return searched(products, filteredProducts, searchString);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(List<Product> products)? loaded,
+    TResult? Function(List<Product> products, List<Product> filteredProducts,
+            String searchString)?
+        searched,
+  }) {
+    return searched?.call(products, filteredProducts, searchString);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Product> products)? loaded,
+    TResult Function(List<Product> products, List<Product> filteredProducts,
+            String searchString)?
+        searched,
+    required TResult orElse(),
+  }) {
+    if (searched != null) {
+      return searched(products, filteredProducts, searchString);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(Searched value) searched,
+  }) {
+    return searched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Searched value)? searched,
+  }) {
+    return searched?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Searched value)? searched,
+    required TResult orElse(),
+  }) {
+    if (searched != null) {
+      return searched(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _ProductsState implements ProductsState {
-  const factory _ProductsState(
-      {final ProductsStatus status,
+abstract class Searched implements ProductsState {
+  const factory Searched(
       final List<Product> products,
-      final List<Product> filteredProducts}) = _$_ProductsState;
+      final List<Product> filteredProducts,
+      final String searchString) = _$Searched;
 
-  @override
-  ProductsStatus get status;
-  @override
   List<Product> get products;
-  @override
   List<Product> get filteredProducts;
-  @override
+  String get searchString;
   @JsonKey(ignore: true)
-  _$$_ProductsStateCopyWith<_$_ProductsState> get copyWith =>
+  _$$SearchedCopyWith<_$Searched> get copyWith =>
       throw _privateConstructorUsedError;
 }
