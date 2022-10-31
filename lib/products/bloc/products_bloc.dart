@@ -21,14 +21,17 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
   Future<void> _onProductsFetched(
       ProductsInitialized event, Emitter<ProductsState> emit) async {
     final products = await productsRep.getProducts();
-    emit(state.copyWith(status: ProductsStatus.loaded, products: products));
+    emit(state.copyWith(
+        status: ProductsStatus.loaded,
+        products: products,
+        filteredProducts: products));
   }
 
   void _onProductsFiltered(
       ProductsSearchStringChanged event, Emitter<ProductsState> emit) {
     emit(state.copyWith(
         status: ProductsStatus.searched,
-        products: state.products
+        filteredProducts: state.products
             .where((product) => product.name.contains(event.searchString))
             .toList()));
   }

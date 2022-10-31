@@ -1,7 +1,7 @@
 import 'package:ch_layout/products/bloc/products_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'PurchaseCard.dart';
+import 'purchase_card.dart';
 
 class PurchaseListWithBuilder extends StatelessWidget {
   const PurchaseListWithBuilder({super.key});
@@ -32,17 +32,23 @@ class PurchaseListWithBuilder extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: ListView.builder(
-                  itemCount: state.products.length,
-                  prototypeItem: PurchaseCard(
-                    product: state.products.first,
-                  ),
-                  itemBuilder: (context, index) {
-                    return PurchaseCard(
-                      product: state.products[index],
-                    );
-                  },
-                ),
+                child: state.filteredProducts.isNotEmpty
+                    ? ListView.builder(
+                        itemCount: state.filteredProducts.length,
+                        prototypeItem: PurchaseCard(
+                          product: state.filteredProducts.first,
+                        ),
+                        itemBuilder: (context, index) {
+                          return PurchaseCard(
+                            product: state.filteredProducts[index],
+                          );
+                        },
+                      )
+                    : const Center(
+                        child: Text(
+                        'Nothing was found',
+                        style: TextStyle(fontSize: 20),
+                      )),
               ),
             ],
           );

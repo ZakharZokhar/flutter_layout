@@ -5,8 +5,8 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
 import 'main.config.dart';
-import 'widgets/TopBarWidget.dart';
-import 'widgets/PurchaseListWithBuilder.dart';
+import 'widgets/top_bar_widget.dart';
+import 'widgets/purchase_list_with_builder.dart';
 import 'products/products.dart';
 
 final getIt = GetIt.instance;
@@ -57,7 +57,7 @@ class MyPage extends StatelessWidget {
               create: (_) =>
                   ProductsBloc(productsRep: LocalProductsRepository())
                     ..add(const ProductsInitialized()),
-              child: Expanded(child: PurchaseListWithBuilder()))
+              child: const Expanded(child: PurchaseListWithBuilder()))
         ],
       ),
       floatingActionButton: FloatingActionButton(

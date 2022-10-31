@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ProductPage.dart';
+import 'product_page.dart';
 import '../products/products.dart';
 
 class PurchaseCard extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'PurchaseCard.dart';
+import 'purchase_card.dart';
 import '../products/products.dart';
 
 class PurchaseListWithSeparated extends StatelessWidget {
