@@ -23,7 +23,8 @@ class PurchaseListWithBuilder extends StatelessWidget {
                       ),
                       onChanged: (search) {
                         context.read<ProductsBloc>().add(
-                            ProductsEvent.productsSearchStringChanged(search));
+                            ProductsEvent.searchStringChanged(
+                                searchString: search));
                       },
                     ),
                   ),
@@ -60,7 +61,8 @@ class PurchaseListWithBuilder extends StatelessWidget {
                       ),
                       onChanged: (search) {
                         context.read<ProductsBloc>().add(
-                            ProductsEvent.productsSearchStringChanged(search));
+                            ProductsEvent.searchStringChanged(
+                                searchString: search));
                       },
                     ),
                   ),

@@ -56,7 +56,7 @@ class MyPage extends StatelessWidget {
           BlocProvider(
               create: (_) =>
                   ProductsBloc(productsRep: LocalProductsRepository())
-                    ..add(const ProductsInitialized()),
+                    ..add(const ProductsEvent.initialized()),
               child: const Expanded(child: PurchaseListWithBuilder()))
         ],
       ),
