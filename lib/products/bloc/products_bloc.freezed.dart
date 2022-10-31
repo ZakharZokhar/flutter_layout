@@ -15,19 +15,61 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ProductsInitialized {}
-
-/// @nodoc
-abstract class $ProductsInitializedCopyWith<$Res> {
-  factory $ProductsInitializedCopyWith(
-          ProductsInitialized value, $Res Function(ProductsInitialized) then) =
-      _$ProductsInitializedCopyWithImpl<$Res, ProductsInitialized>;
+mixin _$ProductsEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() productsInitialized,
+    required TResult Function(String searchString) productsSearchStringChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? productsInitialized,
+    TResult? Function(String searchString)? productsSearchStringChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? productsInitialized,
+    TResult Function(String searchString)? productsSearchStringChanged,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProductsInitialized value) productsInitialized,
+    required TResult Function(ProductsSearchStringChanged value)
+        productsSearchStringChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProductsInitialized value)? productsInitialized,
+    TResult? Function(ProductsSearchStringChanged value)?
+        productsSearchStringChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProductsInitialized value)? productsInitialized,
+    TResult Function(ProductsSearchStringChanged value)?
+        productsSearchStringChanged,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$ProductsInitializedCopyWithImpl<$Res, $Val extends ProductsInitialized>
-    implements $ProductsInitializedCopyWith<$Res> {
-  _$ProductsInitializedCopyWithImpl(this._value, this._then);
+abstract class $ProductsEventCopyWith<$Res> {
+  factory $ProductsEventCopyWith(
+          ProductsEvent value, $Res Function(ProductsEvent) then) =
+      _$ProductsEventCopyWithImpl<$Res, ProductsEvent>;
+}
+
+/// @nodoc
+class _$ProductsEventCopyWithImpl<$Res, $Val extends ProductsEvent>
+    implements $ProductsEventCopyWith<$Res> {
+  _$ProductsEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -36,118 +78,136 @@ class _$ProductsInitializedCopyWithImpl<$Res, $Val extends ProductsInitialized>
 }
 
 /// @nodoc
-abstract class _$$_ProductsInitializedCopyWith<$Res> {
-  factory _$$_ProductsInitializedCopyWith(_$_ProductsInitialized value,
-          $Res Function(_$_ProductsInitialized) then) =
-      __$$_ProductsInitializedCopyWithImpl<$Res>;
+abstract class _$$ProductsInitializedCopyWith<$Res> {
+  factory _$$ProductsInitializedCopyWith(_$ProductsInitialized value,
+          $Res Function(_$ProductsInitialized) then) =
+      __$$ProductsInitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ProductsInitializedCopyWithImpl<$Res>
-    extends _$ProductsInitializedCopyWithImpl<$Res, _$_ProductsInitialized>
-    implements _$$_ProductsInitializedCopyWith<$Res> {
-  __$$_ProductsInitializedCopyWithImpl(_$_ProductsInitialized _value,
-      $Res Function(_$_ProductsInitialized) _then)
+class __$$ProductsInitializedCopyWithImpl<$Res>
+    extends _$ProductsEventCopyWithImpl<$Res, _$ProductsInitialized>
+    implements _$$ProductsInitializedCopyWith<$Res> {
+  __$$ProductsInitializedCopyWithImpl(
+      _$ProductsInitialized _value, $Res Function(_$ProductsInitialized) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ProductsInitialized
+class _$ProductsInitialized
     with DiagnosticableTreeMixin
-    implements _ProductsInitialized {
-  const _$_ProductsInitialized();
+    implements ProductsInitialized {
+  const _$ProductsInitialized();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProductsInitialized()';
+    return 'ProductsEvent.productsInitialized()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'ProductsInitialized'));
+    properties
+        .add(DiagnosticsProperty('type', 'ProductsEvent.productsInitialized'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ProductsInitialized);
+        (other.runtimeType == runtimeType && other is _$ProductsInitialized);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-}
 
-abstract class _ProductsInitialized implements ProductsInitialized {
-  const factory _ProductsInitialized() = _$_ProductsInitialized;
-}
-
-/// @nodoc
-mixin _$ProductsSearchStringChanged {
-  String get searchString => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ProductsSearchStringChangedCopyWith<ProductsSearchStringChanged>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ProductsSearchStringChangedCopyWith<$Res> {
-  factory $ProductsSearchStringChangedCopyWith(
-          ProductsSearchStringChanged value,
-          $Res Function(ProductsSearchStringChanged) then) =
-      _$ProductsSearchStringChangedCopyWithImpl<$Res,
-          ProductsSearchStringChanged>;
-  @useResult
-  $Res call({String searchString});
-}
-
-/// @nodoc
-class _$ProductsSearchStringChangedCopyWithImpl<$Res,
-        $Val extends ProductsSearchStringChanged>
-    implements $ProductsSearchStringChangedCopyWith<$Res> {
-  _$ProductsSearchStringChangedCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? searchString = null,
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() productsInitialized,
+    required TResult Function(String searchString) productsSearchStringChanged,
   }) {
-    return _then(_value.copyWith(
-      searchString: null == searchString
-          ? _value.searchString
-          : searchString // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+    return productsInitialized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? productsInitialized,
+    TResult? Function(String searchString)? productsSearchStringChanged,
+  }) {
+    return productsInitialized?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? productsInitialized,
+    TResult Function(String searchString)? productsSearchStringChanged,
+    required TResult orElse(),
+  }) {
+    if (productsInitialized != null) {
+      return productsInitialized();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProductsInitialized value) productsInitialized,
+    required TResult Function(ProductsSearchStringChanged value)
+        productsSearchStringChanged,
+  }) {
+    return productsInitialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProductsInitialized value)? productsInitialized,
+    TResult? Function(ProductsSearchStringChanged value)?
+        productsSearchStringChanged,
+  }) {
+    return productsInitialized?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProductsInitialized value)? productsInitialized,
+    TResult Function(ProductsSearchStringChanged value)?
+        productsSearchStringChanged,
+    required TResult orElse(),
+  }) {
+    if (productsInitialized != null) {
+      return productsInitialized(this);
+    }
+    return orElse();
   }
 }
 
+abstract class ProductsInitialized implements ProductsEvent {
+  const factory ProductsInitialized() = _$ProductsInitialized;
+}
+
 /// @nodoc
-abstract class _$$_ProductsSearchStringChangedCopyWith<$Res>
-    implements $ProductsSearchStringChangedCopyWith<$Res> {
-  factory _$$_ProductsSearchStringChangedCopyWith(
-          _$_ProductsSearchStringChanged value,
-          $Res Function(_$_ProductsSearchStringChanged) then) =
-      __$$_ProductsSearchStringChangedCopyWithImpl<$Res>;
-  @override
+abstract class _$$ProductsSearchStringChangedCopyWith<$Res> {
+  factory _$$ProductsSearchStringChangedCopyWith(
+          _$ProductsSearchStringChanged value,
+          $Res Function(_$ProductsSearchStringChanged) then) =
+      __$$ProductsSearchStringChangedCopyWithImpl<$Res>;
   @useResult
   $Res call({String searchString});
 }
 
 /// @nodoc
-class __$$_ProductsSearchStringChangedCopyWithImpl<$Res>
-    extends _$ProductsSearchStringChangedCopyWithImpl<$Res,
-        _$_ProductsSearchStringChanged>
-    implements _$$_ProductsSearchStringChangedCopyWith<$Res> {
-  __$$_ProductsSearchStringChangedCopyWithImpl(
-      _$_ProductsSearchStringChanged _value,
-      $Res Function(_$_ProductsSearchStringChanged) _then)
+class __$$ProductsSearchStringChangedCopyWithImpl<$Res>
+    extends _$ProductsEventCopyWithImpl<$Res, _$ProductsSearchStringChanged>
+    implements _$$ProductsSearchStringChangedCopyWith<$Res> {
+  __$$ProductsSearchStringChangedCopyWithImpl(
+      _$ProductsSearchStringChanged _value,
+      $Res Function(_$ProductsSearchStringChanged) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -155,8 +215,8 @@ class __$$_ProductsSearchStringChangedCopyWithImpl<$Res>
   $Res call({
     Object? searchString = null,
   }) {
-    return _then(_$_ProductsSearchStringChanged(
-      searchString: null == searchString
+    return _then(_$ProductsSearchStringChanged(
+      null == searchString
           ? _value.searchString
           : searchString // ignore: cast_nullable_to_non_nullable
               as String,
@@ -166,24 +226,25 @@ class __$$_ProductsSearchStringChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ProductsSearchStringChanged
+class _$ProductsSearchStringChanged
     with DiagnosticableTreeMixin
-    implements _ProductsSearchStringChanged {
-  _$_ProductsSearchStringChanged({required this.searchString});
+    implements ProductsSearchStringChanged {
+  const _$ProductsSearchStringChanged(this.searchString);
 
   @override
   final String searchString;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProductsSearchStringChanged(searchString: $searchString)';
+    return 'ProductsEvent.productsSearchStringChanged(searchString: $searchString)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ProductsSearchStringChanged'))
+      ..add(DiagnosticsProperty(
+          'type', 'ProductsEvent.productsSearchStringChanged'))
       ..add(DiagnosticsProperty('searchString', searchString));
   }
 
@@ -191,7 +252,7 @@ class _$_ProductsSearchStringChanged
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProductsSearchStringChanged &&
+            other is _$ProductsSearchStringChanged &&
             (identical(other.searchString, searchString) ||
                 other.searchString == searchString));
   }
@@ -202,21 +263,83 @@ class _$_ProductsSearchStringChanged
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProductsSearchStringChangedCopyWith<_$_ProductsSearchStringChanged>
-      get copyWith => __$$_ProductsSearchStringChangedCopyWithImpl<
-          _$_ProductsSearchStringChanged>(this, _$identity);
+  _$$ProductsSearchStringChangedCopyWith<_$ProductsSearchStringChanged>
+      get copyWith => __$$ProductsSearchStringChangedCopyWithImpl<
+          _$ProductsSearchStringChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() productsInitialized,
+    required TResult Function(String searchString) productsSearchStringChanged,
+  }) {
+    return productsSearchStringChanged(searchString);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? productsInitialized,
+    TResult? Function(String searchString)? productsSearchStringChanged,
+  }) {
+    return productsSearchStringChanged?.call(searchString);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? productsInitialized,
+    TResult Function(String searchString)? productsSearchStringChanged,
+    required TResult orElse(),
+  }) {
+    if (productsSearchStringChanged != null) {
+      return productsSearchStringChanged(searchString);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProductsInitialized value) productsInitialized,
+    required TResult Function(ProductsSearchStringChanged value)
+        productsSearchStringChanged,
+  }) {
+    return productsSearchStringChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProductsInitialized value)? productsInitialized,
+    TResult? Function(ProductsSearchStringChanged value)?
+        productsSearchStringChanged,
+  }) {
+    return productsSearchStringChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProductsInitialized value)? productsInitialized,
+    TResult Function(ProductsSearchStringChanged value)?
+        productsSearchStringChanged,
+    required TResult orElse(),
+  }) {
+    if (productsSearchStringChanged != null) {
+      return productsSearchStringChanged(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _ProductsSearchStringChanged
-    implements ProductsSearchStringChanged {
-  factory _ProductsSearchStringChanged({required final String searchString}) =
-      _$_ProductsSearchStringChanged;
+abstract class ProductsSearchStringChanged implements ProductsEvent {
+  const factory ProductsSearchStringChanged(final String searchString) =
+      _$ProductsSearchStringChanged;
 
-  @override
   String get searchString;
-  @override
   @JsonKey(ignore: true)
-  _$$_ProductsSearchStringChangedCopyWith<_$_ProductsSearchStringChanged>
+  _$$ProductsSearchStringChangedCopyWith<_$ProductsSearchStringChanged>
       get copyWith => throw _privateConstructorUsedError;
 }
 
