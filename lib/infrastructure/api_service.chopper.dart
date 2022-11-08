@@ -7,14 +7,14 @@ part of 'api_service.dart';
 // **************************************************************************
 
 // ignore_for_file: always_put_control_body_on_new_line, always_specify_types, prefer_const_declarations, unnecessary_brace_in_string_interps
-class _$PostApiService extends PostApiService {
-  _$PostApiService([ChopperClient? client]) {
+class _$PostApiChopperService extends PostApiChopperService {
+  _$PostApiChopperService([ChopperClient? client]) {
     if (client == null) return;
     this.client = client;
   }
 
   @override
-  final definitionType = PostApiService;
+  final definitionType = PostApiChopperService;
 
   @override
   Future<Response<dynamic>> getPosts() {

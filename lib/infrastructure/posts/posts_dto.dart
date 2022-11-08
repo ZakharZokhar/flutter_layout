@@ -5,6 +5,20 @@ part 'posts_dto.freezed.dart';
 part 'posts_dto.g.dart';
 
 @freezed
+class PostsDto with _$PostsDto {
+  const PostsDto._();
+
+  const factory PostsDto({required List<PostDto> posts}) = _PostsDto;
+
+  Posts toDomain() {
+    return Posts(posts: posts.map((dto) => dto.toDomain()).toList());
+  }
+
+  factory PostsDto.fromJson(Map<String, Object?> json) =>
+      _$PostsDtoFromJson(json);
+}
+
+@freezed
 class PostDto with _$PostDto {
   const PostDto._();
 

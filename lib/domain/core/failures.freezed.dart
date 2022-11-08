@@ -24,6 +24,7 @@ mixin _$PostFailure<T> {
     required TResult Function(T failedRequest) forbidden,
     required TResult Function(T failedRequest) notFound,
     required TResult Function(T failedRequest) internal,
+    required TResult Function(T failedRequest) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,6 +34,7 @@ mixin _$PostFailure<T> {
     TResult? Function(T failedRequest)? forbidden,
     TResult? Function(T failedRequest)? notFound,
     TResult? Function(T failedRequest)? internal,
+    TResult? Function(T failedRequest)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +44,7 @@ mixin _$PostFailure<T> {
     TResult Function(T failedRequest)? forbidden,
     TResult Function(T failedRequest)? notFound,
     TResult Function(T failedRequest)? internal,
+    TResult Function(T failedRequest)? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,6 +55,7 @@ mixin _$PostFailure<T> {
     required TResult Function(Forbidden<T> value) forbidden,
     required TResult Function(NotFound<T> value) notFound,
     required TResult Function(Internal<T> value) internal,
+    required TResult Function(Unknown<T> value) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +65,7 @@ mixin _$PostFailure<T> {
     TResult? Function(Forbidden<T> value)? forbidden,
     TResult? Function(NotFound<T> value)? notFound,
     TResult? Function(Internal<T> value)? internal,
+    TResult? Function(Unknown<T> value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +75,7 @@ mixin _$PostFailure<T> {
     TResult Function(Forbidden<T> value)? forbidden,
     TResult Function(NotFound<T> value)? notFound,
     TResult Function(Internal<T> value)? internal,
+    TResult Function(Unknown<T> value)? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -185,6 +191,7 @@ class _$BadRequest<T> implements BadRequest<T> {
     required TResult Function(T failedRequest) forbidden,
     required TResult Function(T failedRequest) notFound,
     required TResult Function(T failedRequest) internal,
+    required TResult Function(T failedRequest) unknown,
   }) {
     return badRequest(failedRequest);
   }
@@ -197,6 +204,7 @@ class _$BadRequest<T> implements BadRequest<T> {
     TResult? Function(T failedRequest)? forbidden,
     TResult? Function(T failedRequest)? notFound,
     TResult? Function(T failedRequest)? internal,
+    TResult? Function(T failedRequest)? unknown,
   }) {
     return badRequest?.call(failedRequest);
   }
@@ -209,6 +217,7 @@ class _$BadRequest<T> implements BadRequest<T> {
     TResult Function(T failedRequest)? forbidden,
     TResult Function(T failedRequest)? notFound,
     TResult Function(T failedRequest)? internal,
+    TResult Function(T failedRequest)? unknown,
     required TResult orElse(),
   }) {
     if (badRequest != null) {
@@ -225,6 +234,7 @@ class _$BadRequest<T> implements BadRequest<T> {
     required TResult Function(Forbidden<T> value) forbidden,
     required TResult Function(NotFound<T> value) notFound,
     required TResult Function(Internal<T> value) internal,
+    required TResult Function(Unknown<T> value) unknown,
   }) {
     return badRequest(this);
   }
@@ -237,6 +247,7 @@ class _$BadRequest<T> implements BadRequest<T> {
     TResult? Function(Forbidden<T> value)? forbidden,
     TResult? Function(NotFound<T> value)? notFound,
     TResult? Function(Internal<T> value)? internal,
+    TResult? Function(Unknown<T> value)? unknown,
   }) {
     return badRequest?.call(this);
   }
@@ -249,6 +260,7 @@ class _$BadRequest<T> implements BadRequest<T> {
     TResult Function(Forbidden<T> value)? forbidden,
     TResult Function(NotFound<T> value)? notFound,
     TResult Function(Internal<T> value)? internal,
+    TResult Function(Unknown<T> value)? unknown,
     required TResult orElse(),
   }) {
     if (badRequest != null) {
@@ -343,6 +355,7 @@ class _$Unauthenticated<T> implements Unauthenticated<T> {
     required TResult Function(T failedRequest) forbidden,
     required TResult Function(T failedRequest) notFound,
     required TResult Function(T failedRequest) internal,
+    required TResult Function(T failedRequest) unknown,
   }) {
     return unauthenticated(failedRequest);
   }
@@ -355,6 +368,7 @@ class _$Unauthenticated<T> implements Unauthenticated<T> {
     TResult? Function(T failedRequest)? forbidden,
     TResult? Function(T failedRequest)? notFound,
     TResult? Function(T failedRequest)? internal,
+    TResult? Function(T failedRequest)? unknown,
   }) {
     return unauthenticated?.call(failedRequest);
   }
@@ -367,6 +381,7 @@ class _$Unauthenticated<T> implements Unauthenticated<T> {
     TResult Function(T failedRequest)? forbidden,
     TResult Function(T failedRequest)? notFound,
     TResult Function(T failedRequest)? internal,
+    TResult Function(T failedRequest)? unknown,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -383,6 +398,7 @@ class _$Unauthenticated<T> implements Unauthenticated<T> {
     required TResult Function(Forbidden<T> value) forbidden,
     required TResult Function(NotFound<T> value) notFound,
     required TResult Function(Internal<T> value) internal,
+    required TResult Function(Unknown<T> value) unknown,
   }) {
     return unauthenticated(this);
   }
@@ -395,6 +411,7 @@ class _$Unauthenticated<T> implements Unauthenticated<T> {
     TResult? Function(Forbidden<T> value)? forbidden,
     TResult? Function(NotFound<T> value)? notFound,
     TResult? Function(Internal<T> value)? internal,
+    TResult? Function(Unknown<T> value)? unknown,
   }) {
     return unauthenticated?.call(this);
   }
@@ -407,6 +424,7 @@ class _$Unauthenticated<T> implements Unauthenticated<T> {
     TResult Function(Forbidden<T> value)? forbidden,
     TResult Function(NotFound<T> value)? notFound,
     TResult Function(Internal<T> value)? internal,
+    TResult Function(Unknown<T> value)? unknown,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -501,6 +519,7 @@ class _$Forbidden<T> implements Forbidden<T> {
     required TResult Function(T failedRequest) forbidden,
     required TResult Function(T failedRequest) notFound,
     required TResult Function(T failedRequest) internal,
+    required TResult Function(T failedRequest) unknown,
   }) {
     return forbidden(failedRequest);
   }
@@ -513,6 +532,7 @@ class _$Forbidden<T> implements Forbidden<T> {
     TResult? Function(T failedRequest)? forbidden,
     TResult? Function(T failedRequest)? notFound,
     TResult? Function(T failedRequest)? internal,
+    TResult? Function(T failedRequest)? unknown,
   }) {
     return forbidden?.call(failedRequest);
   }
@@ -525,6 +545,7 @@ class _$Forbidden<T> implements Forbidden<T> {
     TResult Function(T failedRequest)? forbidden,
     TResult Function(T failedRequest)? notFound,
     TResult Function(T failedRequest)? internal,
+    TResult Function(T failedRequest)? unknown,
     required TResult orElse(),
   }) {
     if (forbidden != null) {
@@ -541,6 +562,7 @@ class _$Forbidden<T> implements Forbidden<T> {
     required TResult Function(Forbidden<T> value) forbidden,
     required TResult Function(NotFound<T> value) notFound,
     required TResult Function(Internal<T> value) internal,
+    required TResult Function(Unknown<T> value) unknown,
   }) {
     return forbidden(this);
   }
@@ -553,6 +575,7 @@ class _$Forbidden<T> implements Forbidden<T> {
     TResult? Function(Forbidden<T> value)? forbidden,
     TResult? Function(NotFound<T> value)? notFound,
     TResult? Function(Internal<T> value)? internal,
+    TResult? Function(Unknown<T> value)? unknown,
   }) {
     return forbidden?.call(this);
   }
@@ -565,6 +588,7 @@ class _$Forbidden<T> implements Forbidden<T> {
     TResult Function(Forbidden<T> value)? forbidden,
     TResult Function(NotFound<T> value)? notFound,
     TResult Function(Internal<T> value)? internal,
+    TResult Function(Unknown<T> value)? unknown,
     required TResult orElse(),
   }) {
     if (forbidden != null) {
@@ -658,6 +682,7 @@ class _$NotFound<T> implements NotFound<T> {
     required TResult Function(T failedRequest) forbidden,
     required TResult Function(T failedRequest) notFound,
     required TResult Function(T failedRequest) internal,
+    required TResult Function(T failedRequest) unknown,
   }) {
     return notFound(failedRequest);
   }
@@ -670,6 +695,7 @@ class _$NotFound<T> implements NotFound<T> {
     TResult? Function(T failedRequest)? forbidden,
     TResult? Function(T failedRequest)? notFound,
     TResult? Function(T failedRequest)? internal,
+    TResult? Function(T failedRequest)? unknown,
   }) {
     return notFound?.call(failedRequest);
   }
@@ -682,6 +708,7 @@ class _$NotFound<T> implements NotFound<T> {
     TResult Function(T failedRequest)? forbidden,
     TResult Function(T failedRequest)? notFound,
     TResult Function(T failedRequest)? internal,
+    TResult Function(T failedRequest)? unknown,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -698,6 +725,7 @@ class _$NotFound<T> implements NotFound<T> {
     required TResult Function(Forbidden<T> value) forbidden,
     required TResult Function(NotFound<T> value) notFound,
     required TResult Function(Internal<T> value) internal,
+    required TResult Function(Unknown<T> value) unknown,
   }) {
     return notFound(this);
   }
@@ -710,6 +738,7 @@ class _$NotFound<T> implements NotFound<T> {
     TResult? Function(Forbidden<T> value)? forbidden,
     TResult? Function(NotFound<T> value)? notFound,
     TResult? Function(Internal<T> value)? internal,
+    TResult? Function(Unknown<T> value)? unknown,
   }) {
     return notFound?.call(this);
   }
@@ -722,6 +751,7 @@ class _$NotFound<T> implements NotFound<T> {
     TResult Function(Forbidden<T> value)? forbidden,
     TResult Function(NotFound<T> value)? notFound,
     TResult Function(Internal<T> value)? internal,
+    TResult Function(Unknown<T> value)? unknown,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -815,6 +845,7 @@ class _$Internal<T> implements Internal<T> {
     required TResult Function(T failedRequest) forbidden,
     required TResult Function(T failedRequest) notFound,
     required TResult Function(T failedRequest) internal,
+    required TResult Function(T failedRequest) unknown,
   }) {
     return internal(failedRequest);
   }
@@ -827,6 +858,7 @@ class _$Internal<T> implements Internal<T> {
     TResult? Function(T failedRequest)? forbidden,
     TResult? Function(T failedRequest)? notFound,
     TResult? Function(T failedRequest)? internal,
+    TResult? Function(T failedRequest)? unknown,
   }) {
     return internal?.call(failedRequest);
   }
@@ -839,6 +871,7 @@ class _$Internal<T> implements Internal<T> {
     TResult Function(T failedRequest)? forbidden,
     TResult Function(T failedRequest)? notFound,
     TResult Function(T failedRequest)? internal,
+    TResult Function(T failedRequest)? unknown,
     required TResult orElse(),
   }) {
     if (internal != null) {
@@ -855,6 +888,7 @@ class _$Internal<T> implements Internal<T> {
     required TResult Function(Forbidden<T> value) forbidden,
     required TResult Function(NotFound<T> value) notFound,
     required TResult Function(Internal<T> value) internal,
+    required TResult Function(Unknown<T> value) unknown,
   }) {
     return internal(this);
   }
@@ -867,6 +901,7 @@ class _$Internal<T> implements Internal<T> {
     TResult? Function(Forbidden<T> value)? forbidden,
     TResult? Function(NotFound<T> value)? notFound,
     TResult? Function(Internal<T> value)? internal,
+    TResult? Function(Unknown<T> value)? unknown,
   }) {
     return internal?.call(this);
   }
@@ -879,6 +914,7 @@ class _$Internal<T> implements Internal<T> {
     TResult Function(Forbidden<T> value)? forbidden,
     TResult Function(NotFound<T> value)? notFound,
     TResult Function(Internal<T> value)? internal,
+    TResult Function(Unknown<T> value)? unknown,
     required TResult orElse(),
   }) {
     if (internal != null) {
@@ -896,5 +932,168 @@ abstract class Internal<T> implements PostFailure<T> {
   @override
   @JsonKey(ignore: true)
   _$$InternalCopyWith<T, _$Internal<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnknownCopyWith<T, $Res>
+    implements $PostFailureCopyWith<T, $Res> {
+  factory _$$UnknownCopyWith(
+          _$Unknown<T> value, $Res Function(_$Unknown<T>) then) =
+      __$$UnknownCopyWithImpl<T, $Res>;
+  @override
+  @useResult
+  $Res call({T failedRequest});
+}
+
+/// @nodoc
+class __$$UnknownCopyWithImpl<T, $Res>
+    extends _$PostFailureCopyWithImpl<T, $Res, _$Unknown<T>>
+    implements _$$UnknownCopyWith<T, $Res> {
+  __$$UnknownCopyWithImpl(
+      _$Unknown<T> _value, $Res Function(_$Unknown<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failedRequest = null,
+  }) {
+    return _then(_$Unknown<T>(
+      failedRequest: null == failedRequest
+          ? _value.failedRequest
+          : failedRequest // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$Unknown<T> implements Unknown<T> {
+  const _$Unknown({required this.failedRequest});
+
+  @override
+  final T failedRequest;
+
+  @override
+  String toString() {
+    return 'PostFailure<$T>.unknown(failedRequest: $failedRequest)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$Unknown<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedRequest, failedRequest));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedRequest));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnknownCopyWith<T, _$Unknown<T>> get copyWith =>
+      __$$UnknownCopyWithImpl<T, _$Unknown<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedRequest) badRequest,
+    required TResult Function(T failedRequest) unauthenticated,
+    required TResult Function(T failedRequest) forbidden,
+    required TResult Function(T failedRequest) notFound,
+    required TResult Function(T failedRequest) internal,
+    required TResult Function(T failedRequest) unknown,
+  }) {
+    return unknown(failedRequest);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T failedRequest)? badRequest,
+    TResult? Function(T failedRequest)? unauthenticated,
+    TResult? Function(T failedRequest)? forbidden,
+    TResult? Function(T failedRequest)? notFound,
+    TResult? Function(T failedRequest)? internal,
+    TResult? Function(T failedRequest)? unknown,
+  }) {
+    return unknown?.call(failedRequest);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedRequest)? badRequest,
+    TResult Function(T failedRequest)? unauthenticated,
+    TResult Function(T failedRequest)? forbidden,
+    TResult Function(T failedRequest)? notFound,
+    TResult Function(T failedRequest)? internal,
+    TResult Function(T failedRequest)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(failedRequest);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BadRequest<T> value) badRequest,
+    required TResult Function(Unauthenticated<T> value) unauthenticated,
+    required TResult Function(Forbidden<T> value) forbidden,
+    required TResult Function(NotFound<T> value) notFound,
+    required TResult Function(Internal<T> value) internal,
+    required TResult Function(Unknown<T> value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BadRequest<T> value)? badRequest,
+    TResult? Function(Unauthenticated<T> value)? unauthenticated,
+    TResult? Function(Forbidden<T> value)? forbidden,
+    TResult? Function(NotFound<T> value)? notFound,
+    TResult? Function(Internal<T> value)? internal,
+    TResult? Function(Unknown<T> value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BadRequest<T> value)? badRequest,
+    TResult Function(Unauthenticated<T> value)? unauthenticated,
+    TResult Function(Forbidden<T> value)? forbidden,
+    TResult Function(NotFound<T> value)? notFound,
+    TResult Function(Internal<T> value)? internal,
+    TResult Function(Unknown<T> value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Unknown<T> implements PostFailure<T> {
+  const factory Unknown({required final T failedRequest}) = _$Unknown<T>;
+
+  @override
+  T get failedRequest;
+  @override
+  @JsonKey(ignore: true)
+  _$$UnknownCopyWith<T, _$Unknown<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

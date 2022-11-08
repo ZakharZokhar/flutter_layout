@@ -158,3 +158,119 @@ abstract class _Post implements Post {
   @JsonKey(ignore: true)
   _$$_PostCopyWith<_$_Post> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$Posts {
+  List<Post> get posts => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $PostsCopyWith<Posts> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PostsCopyWith<$Res> {
+  factory $PostsCopyWith(Posts value, $Res Function(Posts) then) =
+      _$PostsCopyWithImpl<$Res, Posts>;
+  @useResult
+  $Res call({List<Post> posts});
+}
+
+/// @nodoc
+class _$PostsCopyWithImpl<$Res, $Val extends Posts>
+    implements $PostsCopyWith<$Res> {
+  _$PostsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? posts = null,
+  }) {
+    return _then(_value.copyWith(
+      posts: null == posts
+          ? _value.posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<Post>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_PostsCopyWith<$Res> implements $PostsCopyWith<$Res> {
+  factory _$$_PostsCopyWith(_$_Posts value, $Res Function(_$_Posts) then) =
+      __$$_PostsCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Post> posts});
+}
+
+/// @nodoc
+class __$$_PostsCopyWithImpl<$Res> extends _$PostsCopyWithImpl<$Res, _$_Posts>
+    implements _$$_PostsCopyWith<$Res> {
+  __$$_PostsCopyWithImpl(_$_Posts _value, $Res Function(_$_Posts) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? posts = null,
+  }) {
+    return _then(_$_Posts(
+      posts: null == posts
+          ? _value._posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<Post>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Posts implements _Posts {
+  const _$_Posts({required final List<Post> posts}) : _posts = posts;
+
+  final List<Post> _posts;
+  @override
+  List<Post> get posts {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_posts);
+  }
+
+  @override
+  String toString() {
+    return 'Posts(posts: $posts)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Posts &&
+            const DeepCollectionEquality().equals(other._posts, _posts));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_posts));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PostsCopyWith<_$_Posts> get copyWith =>
+      __$$_PostsCopyWithImpl<_$_Posts>(this, _$identity);
+}
+
+abstract class _Posts implements Posts {
+  const factory _Posts({required final List<Post> posts}) = _$_Posts;
+
+  @override
+  List<Post> get posts;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PostsCopyWith<_$_Posts> get copyWith =>
+      throw _privateConstructorUsedError;
+}

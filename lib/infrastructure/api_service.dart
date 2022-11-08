@@ -3,17 +3,17 @@ import 'package:chopper/chopper.dart';
 part 'api_service.chopper.dart';
 
 @ChopperApi(baseUrl: '/posts')
-abstract class PostApiService extends ChopperService {
+abstract class PostApiChopperService extends ChopperService {
   @Get()
   Future<Response> getPosts();
-  static PostApiService create() {
+  static PostApiChopperService create() {
     final client = ChopperClient(
       baseUrl: 'https://jsonplaceholder.typicode.com',
       services: [
-        _$PostApiService(),
+        _$PostApiChopperService(),
       ],
       converter: const JsonConverter(),
     );
-    return _$PostApiService(client);
+    return _$PostApiChopperService(client);
   }
 }

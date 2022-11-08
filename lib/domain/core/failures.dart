@@ -12,4 +12,5 @@ abstract class PostFailure<T> with _$PostFailure<T> {
       Forbidden<T>;
   const factory PostFailure.notFound({required T failedRequest}) = NotFound<T>;
   const factory PostFailure.internal({required T failedRequest}) = Internal<T>;
+  const factory PostFailure.unknown({required T failedRequest}) = Unknown<T>;
 }
