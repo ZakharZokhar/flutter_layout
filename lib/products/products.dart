@@ -21,7 +21,7 @@ class Product {
   final List<String> labels;
 }
 
-@lazySingleton
+@LazySingleton(as: ProductsRepository)
 class LocalProductsRepository implements ProductsRepository {
   @override
   Future<List<Product>> getProducts() async {

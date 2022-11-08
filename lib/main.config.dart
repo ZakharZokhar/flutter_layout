@@ -23,8 +23,7 @@ _i1.GetIt $initGetIt(
     environment,
     environmentFilter,
   );
-  gh.lazySingleton<_i3.LocalProductsRepository>(
-      () => _i3.LocalProductsRepository());
+  gh.lazySingleton<_i3.ProductsRepository>(() => _i3.LocalProductsRepository());
   gh.factory<_i4.ProductsBloc>(
       () => _i4.ProductsBloc(productsRep: get<_i3.ProductsRepository>()));
   return get;

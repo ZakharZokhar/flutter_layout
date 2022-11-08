@@ -37,20 +37,20 @@ mixin _$ProductsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SearchStringChanged value) searchStringChanged,
+    required TResult Function(Initialized value) initialized,
+    required TResult Function(SearchStringChanged value) searchStringChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_SearchStringChanged value)? searchStringChanged,
+    TResult? Function(Initialized value)? initialized,
+    TResult? Function(SearchStringChanged value)? searchStringChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchStringChanged value)? searchStringChanged,
+    TResult Function(Initialized value)? initialized,
+    TResult Function(SearchStringChanged value)? searchStringChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,25 +75,25 @@ class _$ProductsEventCopyWithImpl<$Res, $Val extends ProductsEvent>
 }
 
 /// @nodoc
-abstract class _$$_InitializedCopyWith<$Res> {
-  factory _$$_InitializedCopyWith(
-          _$_Initialized value, $Res Function(_$_Initialized) then) =
-      __$$_InitializedCopyWithImpl<$Res>;
+abstract class _$$InitializedCopyWith<$Res> {
+  factory _$$InitializedCopyWith(
+          _$Initialized value, $Res Function(_$Initialized) then) =
+      __$$InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitializedCopyWithImpl<$Res>
-    extends _$ProductsEventCopyWithImpl<$Res, _$_Initialized>
-    implements _$$_InitializedCopyWith<$Res> {
-  __$$_InitializedCopyWithImpl(
-      _$_Initialized _value, $Res Function(_$_Initialized) _then)
+class __$$InitializedCopyWithImpl<$Res>
+    extends _$ProductsEventCopyWithImpl<$Res, _$Initialized>
+    implements _$$InitializedCopyWith<$Res> {
+  __$$InitializedCopyWithImpl(
+      _$Initialized _value, $Res Function(_$Initialized) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
-  const _$_Initialized();
+class _$Initialized with DiagnosticableTreeMixin implements Initialized {
+  const _$Initialized();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -109,7 +109,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initialized);
+        (other.runtimeType == runtimeType && other is _$Initialized);
   }
 
   @override
@@ -149,8 +149,8 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SearchStringChanged value) searchStringChanged,
+    required TResult Function(Initialized value) initialized,
+    required TResult Function(SearchStringChanged value) searchStringChanged,
   }) {
     return initialized(this);
   }
@@ -158,8 +158,8 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_SearchStringChanged value)? searchStringChanged,
+    TResult? Function(Initialized value)? initialized,
+    TResult? Function(SearchStringChanged value)? searchStringChanged,
   }) {
     return initialized?.call(this);
   }
@@ -167,8 +167,8 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchStringChanged value)? searchStringChanged,
+    TResult Function(Initialized value)? initialized,
+    TResult Function(SearchStringChanged value)? searchStringChanged,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -178,25 +178,25 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
   }
 }
 
-abstract class _Initialized implements ProductsEvent {
-  const factory _Initialized() = _$_Initialized;
+abstract class Initialized implements ProductsEvent {
+  const factory Initialized() = _$Initialized;
 }
 
 /// @nodoc
-abstract class _$$_SearchStringChangedCopyWith<$Res> {
-  factory _$$_SearchStringChangedCopyWith(_$_SearchStringChanged value,
-          $Res Function(_$_SearchStringChanged) then) =
-      __$$_SearchStringChangedCopyWithImpl<$Res>;
+abstract class _$$SearchStringChangedCopyWith<$Res> {
+  factory _$$SearchStringChangedCopyWith(_$SearchStringChanged value,
+          $Res Function(_$SearchStringChanged) then) =
+      __$$SearchStringChangedCopyWithImpl<$Res>;
   @useResult
   $Res call({String searchString});
 }
 
 /// @nodoc
-class __$$_SearchStringChangedCopyWithImpl<$Res>
-    extends _$ProductsEventCopyWithImpl<$Res, _$_SearchStringChanged>
-    implements _$$_SearchStringChangedCopyWith<$Res> {
-  __$$_SearchStringChangedCopyWithImpl(_$_SearchStringChanged _value,
-      $Res Function(_$_SearchStringChanged) _then)
+class __$$SearchStringChangedCopyWithImpl<$Res>
+    extends _$ProductsEventCopyWithImpl<$Res, _$SearchStringChanged>
+    implements _$$SearchStringChangedCopyWith<$Res> {
+  __$$SearchStringChangedCopyWithImpl(
+      _$SearchStringChanged _value, $Res Function(_$SearchStringChanged) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -204,7 +204,7 @@ class __$$_SearchStringChangedCopyWithImpl<$Res>
   $Res call({
     Object? searchString = null,
   }) {
-    return _then(_$_SearchStringChanged(
+    return _then(_$SearchStringChanged(
       searchString: null == searchString
           ? _value.searchString
           : searchString // ignore: cast_nullable_to_non_nullable
@@ -215,10 +215,10 @@ class __$$_SearchStringChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SearchStringChanged
+class _$SearchStringChanged
     with DiagnosticableTreeMixin
-    implements _SearchStringChanged {
-  const _$_SearchStringChanged({required this.searchString});
+    implements SearchStringChanged {
+  const _$SearchStringChanged({required this.searchString});
 
   @override
   final String searchString;
@@ -240,7 +240,7 @@ class _$_SearchStringChanged
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchStringChanged &&
+            other is _$SearchStringChanged &&
             (identical(other.searchString, searchString) ||
                 other.searchString == searchString));
   }
@@ -251,8 +251,8 @@ class _$_SearchStringChanged
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SearchStringChangedCopyWith<_$_SearchStringChanged> get copyWith =>
-      __$$_SearchStringChangedCopyWithImpl<_$_SearchStringChanged>(
+  _$$SearchStringChangedCopyWith<_$SearchStringChanged> get copyWith =>
+      __$$SearchStringChangedCopyWithImpl<_$SearchStringChanged>(
           this, _$identity);
 
   @override
@@ -289,8 +289,8 @@ class _$_SearchStringChanged
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SearchStringChanged value) searchStringChanged,
+    required TResult Function(Initialized value) initialized,
+    required TResult Function(SearchStringChanged value) searchStringChanged,
   }) {
     return searchStringChanged(this);
   }
@@ -298,8 +298,8 @@ class _$_SearchStringChanged
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_SearchStringChanged value)? searchStringChanged,
+    TResult? Function(Initialized value)? initialized,
+    TResult? Function(SearchStringChanged value)? searchStringChanged,
   }) {
     return searchStringChanged?.call(this);
   }
@@ -307,8 +307,8 @@ class _$_SearchStringChanged
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchStringChanged value)? searchStringChanged,
+    TResult Function(Initialized value)? initialized,
+    TResult Function(SearchStringChanged value)? searchStringChanged,
     required TResult orElse(),
   }) {
     if (searchStringChanged != null) {
@@ -318,13 +318,13 @@ class _$_SearchStringChanged
   }
 }
 
-abstract class _SearchStringChanged implements ProductsEvent {
-  const factory _SearchStringChanged({required final String searchString}) =
-      _$_SearchStringChanged;
+abstract class SearchStringChanged implements ProductsEvent {
+  const factory SearchStringChanged({required final String searchString}) =
+      _$SearchStringChanged;
 
   String get searchString;
   @JsonKey(ignore: true)
-  _$$_SearchStringChangedCopyWith<_$_SearchStringChanged> get copyWith =>
+  _$$SearchStringChangedCopyWith<_$SearchStringChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -360,23 +360,23 @@ mixin _$ProductsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Searched value) searched,
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(Searched value) searched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Searched value)? searched,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Searched value)? searched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Searched value)? searched,
+    TResult Function(Initial value)? initial,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Searched value)? searched,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -401,24 +401,23 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialCopyWith<$Res> {
+  factory _$$InitialCopyWith(_$Initial value, $Res Function(_$Initial) then) =
+      __$$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$Initial>
+    implements _$$InitialCopyWith<$Res> {
+  __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial with DiagnosticableTreeMixin implements _Initial {
-  const _$_Initial();
+class _$Initial with DiagnosticableTreeMixin implements Initial {
+  const _$Initial();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -434,7 +433,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$Initial);
   }
 
   @override
@@ -483,9 +482,9 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Searched value) searched,
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(Searched value) searched,
   }) {
     return initial(this);
   }
@@ -493,9 +492,9 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Searched value)? searched,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Searched value)? searched,
   }) {
     return initial?.call(this);
   }
@@ -503,9 +502,9 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Searched value)? searched,
+    TResult Function(Initial value)? initial,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Searched value)? searched,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -515,23 +514,23 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   }
 }
 
-abstract class _Initial implements ProductsState {
-  const factory _Initial() = _$_Initial;
+abstract class Initial implements ProductsState {
+  const factory Initial() = _$Initial;
 }
 
 /// @nodoc
-abstract class _$$_LoadedCopyWith<$Res> {
-  factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
-      __$$_LoadedCopyWithImpl<$Res>;
+abstract class _$$LoadedCopyWith<$Res> {
+  factory _$$LoadedCopyWith(_$Loaded value, $Res Function(_$Loaded) then) =
+      __$$LoadedCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Product> products});
 }
 
 /// @nodoc
-class __$$_LoadedCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$_Loaded>
-    implements _$$_LoadedCopyWith<$Res> {
-  __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
+class __$$LoadedCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$Loaded>
+    implements _$$LoadedCopyWith<$Res> {
+  __$$LoadedCopyWithImpl(_$Loaded _value, $Res Function(_$Loaded) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -539,8 +538,8 @@ class __$$_LoadedCopyWithImpl<$Res>
   $Res call({
     Object? products = null,
   }) {
-    return _then(_$_Loaded(
-      null == products
+    return _then(_$Loaded(
+      products: null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
               as List<Product>,
@@ -550,8 +549,9 @@ class __$$_LoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
-  const _$_Loaded(final List<Product> products) : _products = products;
+class _$Loaded with DiagnosticableTreeMixin implements Loaded {
+  const _$Loaded({required final List<Product> products})
+      : _products = products;
 
   final List<Product> _products;
   @override
@@ -577,7 +577,7 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Loaded &&
+            other is _$Loaded &&
             const DeepCollectionEquality().equals(other._products, _products));
   }
 
@@ -588,8 +588,8 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
-      __$$_LoadedCopyWithImpl<_$_Loaded>(this, _$identity);
+  _$$LoadedCopyWith<_$Loaded> get copyWith =>
+      __$$LoadedCopyWithImpl<_$Loaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -634,9 +634,9 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Searched value) searched,
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(Searched value) searched,
   }) {
     return loaded(this);
   }
@@ -644,9 +644,9 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Searched value)? searched,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Searched value)? searched,
   }) {
     return loaded?.call(this);
   }
@@ -654,9 +654,9 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Searched value)? searched,
+    TResult Function(Initial value)? initial,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Searched value)? searched,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -666,20 +666,20 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
   }
 }
 
-abstract class _Loaded implements ProductsState {
-  const factory _Loaded(final List<Product> products) = _$_Loaded;
+abstract class Loaded implements ProductsState {
+  const factory Loaded({required final List<Product> products}) = _$Loaded;
 
   List<Product> get products;
   @JsonKey(ignore: true)
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+  _$$LoadedCopyWith<_$Loaded> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SearchedCopyWith<$Res> {
-  factory _$$_SearchedCopyWith(
-          _$_Searched value, $Res Function(_$_Searched) then) =
-      __$$_SearchedCopyWithImpl<$Res>;
+abstract class _$$SearchedCopyWith<$Res> {
+  factory _$$SearchedCopyWith(
+          _$Searched value, $Res Function(_$Searched) then) =
+      __$$SearchedCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {List<Product> products,
@@ -688,11 +688,10 @@ abstract class _$$_SearchedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SearchedCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$_Searched>
-    implements _$$_SearchedCopyWith<$Res> {
-  __$$_SearchedCopyWithImpl(
-      _$_Searched _value, $Res Function(_$_Searched) _then)
+class __$$SearchedCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$Searched>
+    implements _$$SearchedCopyWith<$Res> {
+  __$$SearchedCopyWithImpl(_$Searched _value, $Res Function(_$Searched) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -702,16 +701,16 @@ class __$$_SearchedCopyWithImpl<$Res>
     Object? filteredProducts = null,
     Object? searchString = null,
   }) {
-    return _then(_$_Searched(
-      null == products
+    return _then(_$Searched(
+      products: null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
               as List<Product>,
-      null == filteredProducts
+      filteredProducts: null == filteredProducts
           ? _value._filteredProducts
           : filteredProducts // ignore: cast_nullable_to_non_nullable
               as List<Product>,
-      null == searchString
+      searchString: null == searchString
           ? _value.searchString
           : searchString // ignore: cast_nullable_to_non_nullable
               as String,
@@ -721,9 +720,11 @@ class __$$_SearchedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Searched with DiagnosticableTreeMixin implements _Searched {
-  const _$_Searched(final List<Product> products,
-      final List<Product> filteredProducts, this.searchString)
+class _$Searched with DiagnosticableTreeMixin implements Searched {
+  const _$Searched(
+      {required final List<Product> products,
+      required final List<Product> filteredProducts,
+      required this.searchString})
       : _products = products,
         _filteredProducts = filteredProducts;
 
@@ -763,7 +764,7 @@ class _$_Searched with DiagnosticableTreeMixin implements _Searched {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Searched &&
+            other is _$Searched &&
             const DeepCollectionEquality().equals(other._products, _products) &&
             const DeepCollectionEquality()
                 .equals(other._filteredProducts, _filteredProducts) &&
@@ -781,8 +782,8 @@ class _$_Searched with DiagnosticableTreeMixin implements _Searched {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SearchedCopyWith<_$_Searched> get copyWith =>
-      __$$_SearchedCopyWithImpl<_$_Searched>(this, _$identity);
+  _$$SearchedCopyWith<_$Searched> get copyWith =>
+      __$$SearchedCopyWithImpl<_$Searched>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -827,9 +828,9 @@ class _$_Searched with DiagnosticableTreeMixin implements _Searched {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Searched value) searched,
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(Searched value) searched,
   }) {
     return searched(this);
   }
@@ -837,9 +838,9 @@ class _$_Searched with DiagnosticableTreeMixin implements _Searched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Searched value)? searched,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Searched value)? searched,
   }) {
     return searched?.call(this);
   }
@@ -847,9 +848,9 @@ class _$_Searched with DiagnosticableTreeMixin implements _Searched {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Searched value)? searched,
+    TResult Function(Initial value)? initial,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Searched value)? searched,
     required TResult orElse(),
   }) {
     if (searched != null) {
@@ -859,16 +860,16 @@ class _$_Searched with DiagnosticableTreeMixin implements _Searched {
   }
 }
 
-abstract class _Searched implements ProductsState {
-  const factory _Searched(
-      final List<Product> products,
-      final List<Product> filteredProducts,
-      final String searchString) = _$_Searched;
+abstract class Searched implements ProductsState {
+  const factory Searched(
+      {required final List<Product> products,
+      required final List<Product> filteredProducts,
+      required final String searchString}) = _$Searched;
 
   List<Product> get products;
   List<Product> get filteredProducts;
   String get searchString;
   @JsonKey(ignore: true)
-  _$$_SearchedCopyWith<_$_Searched> get copyWith =>
+  _$$SearchedCopyWith<_$Searched> get copyWith =>
       throw _privateConstructorUsedError;
 }

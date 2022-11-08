@@ -2,8 +2,11 @@ part of 'products_bloc.dart';
 
 @freezed
 class ProductsState with _$ProductsState {
-  const factory ProductsState._initial() = _Initial;
-  const factory ProductsState._loaded(List<Product> products) = _Loaded;
-  const factory ProductsState._searched(List<Product> products,
-      List<Product> filteredProducts, String searchString) = _Searched;
+  const factory ProductsState.initial() = Initial;
+  const factory ProductsState.loaded({required List<Product> products}) =
+      Loaded;
+  const factory ProductsState.searched(
+      {required List<Product> products,
+      required List<Product> filteredProducts,
+      required String searchString}) = Searched;
 }
