@@ -14,154 +14,13 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-PostsDto _$PostsDtoFromJson(Map<String, dynamic> json) {
-  return _PostsDto.fromJson(json);
-}
-
-/// @nodoc
-mixin _$PostsDto {
-  List<PostDto> get posts => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $PostsDtoCopyWith<PostsDto> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PostsDtoCopyWith<$Res> {
-  factory $PostsDtoCopyWith(PostsDto value, $Res Function(PostsDto) then) =
-      _$PostsDtoCopyWithImpl<$Res, PostsDto>;
-  @useResult
-  $Res call({List<PostDto> posts});
-}
-
-/// @nodoc
-class _$PostsDtoCopyWithImpl<$Res, $Val extends PostsDto>
-    implements $PostsDtoCopyWith<$Res> {
-  _$PostsDtoCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? posts = null,
-  }) {
-    return _then(_value.copyWith(
-      posts: null == posts
-          ? _value.posts
-          : posts // ignore: cast_nullable_to_non_nullable
-              as List<PostDto>,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_PostsDtoCopyWith<$Res> implements $PostsDtoCopyWith<$Res> {
-  factory _$$_PostsDtoCopyWith(
-          _$_PostsDto value, $Res Function(_$_PostsDto) then) =
-      __$$_PostsDtoCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({List<PostDto> posts});
-}
-
-/// @nodoc
-class __$$_PostsDtoCopyWithImpl<$Res>
-    extends _$PostsDtoCopyWithImpl<$Res, _$_PostsDto>
-    implements _$$_PostsDtoCopyWith<$Res> {
-  __$$_PostsDtoCopyWithImpl(
-      _$_PostsDto _value, $Res Function(_$_PostsDto) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? posts = null,
-  }) {
-    return _then(_$_PostsDto(
-      posts: null == posts
-          ? _value._posts
-          : posts // ignore: cast_nullable_to_non_nullable
-              as List<PostDto>,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_PostsDto extends _PostsDto {
-  const _$_PostsDto({required final List<PostDto> posts})
-      : _posts = posts,
-        super._();
-
-  factory _$_PostsDto.fromJson(Map<String, dynamic> json) =>
-      _$$_PostsDtoFromJson(json);
-
-  final List<PostDto> _posts;
-  @override
-  List<PostDto> get posts {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_posts);
-  }
-
-  @override
-  String toString() {
-    return 'PostsDto(posts: $posts)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_PostsDto &&
-            const DeepCollectionEquality().equals(other._posts, _posts));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_posts));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_PostsDtoCopyWith<_$_PostsDto> get copyWith =>
-      __$$_PostsDtoCopyWithImpl<_$_PostsDto>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_PostsDtoToJson(
-      this,
-    );
-  }
-}
-
-abstract class _PostsDto extends PostsDto {
-  const factory _PostsDto({required final List<PostDto> posts}) = _$_PostsDto;
-  const _PostsDto._() : super._();
-
-  factory _PostsDto.fromJson(Map<String, dynamic> json) = _$_PostsDto.fromJson;
-
-  @override
-  List<PostDto> get posts;
-  @override
-  @JsonKey(ignore: true)
-  _$$_PostsDtoCopyWith<_$_PostsDto> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 PostDto _$PostDtoFromJson(Map<String, dynamic> json) {
   return _PostDto.fromJson(json);
 }
 
 /// @nodoc
 mixin _$PostDto {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get body => throw _privateConstructorUsedError;
 
@@ -175,7 +34,7 @@ abstract class $PostDtoCopyWith<$Res> {
   factory $PostDtoCopyWith(PostDto value, $Res Function(PostDto) then) =
       _$PostDtoCopyWithImpl<$Res, PostDto>;
   @useResult
-  $Res call({String id, String title, String body});
+  $Res call({int id, String title, String body});
 }
 
 /// @nodoc
@@ -199,7 +58,7 @@ class _$PostDtoCopyWithImpl<$Res, $Val extends PostDto>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -219,7 +78,7 @@ abstract class _$$_PostDtoCopyWith<$Res> implements $PostDtoCopyWith<$Res> {
       __$$_PostDtoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, String body});
+  $Res call({int id, String title, String body});
 }
 
 /// @nodoc
@@ -240,7 +99,7 @@ class __$$_PostDtoCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -263,7 +122,7 @@ class _$_PostDto extends _PostDto {
       _$$_PostDtoFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final String title;
   @override
@@ -304,7 +163,7 @@ class _$_PostDto extends _PostDto {
 
 abstract class _PostDto extends PostDto {
   const factory _PostDto(
-      {required final String id,
+      {required final int id,
       required final String title,
       required final String body}) = _$_PostDto;
   const _PostDto._() : super._();
@@ -312,7 +171,7 @@ abstract class _PostDto extends PostDto {
   factory _PostDto.fromJson(Map<String, dynamic> json) = _$_PostDto.fromJson;
 
   @override
-  String get id;
+  int get id;
   @override
   String get title;
   @override

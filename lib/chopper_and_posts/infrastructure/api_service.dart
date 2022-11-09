@@ -12,7 +12,6 @@ abstract class PostApiChopperService extends ChopperService {
       services: [
         _$PostApiChopperService(),
       ],
-      converter: const JsonConverter(),
     );
     return _$PostApiChopperService(client);
   }

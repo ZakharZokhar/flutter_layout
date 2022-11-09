@@ -16,35 +16,35 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PostFailure<T> {
-  T get failedRequest => throw _privateConstructorUsedError;
+  T get failedResponce => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedRequest) badRequest,
-    required TResult Function(T failedRequest) unauthenticated,
-    required TResult Function(T failedRequest) forbidden,
-    required TResult Function(T failedRequest) notFound,
-    required TResult Function(T failedRequest) internal,
-    required TResult Function(T failedRequest) unknown,
+    required TResult Function(T failedResponce) badRequest,
+    required TResult Function(T failedResponce) unauthenticated,
+    required TResult Function(T failedResponce) forbidden,
+    required TResult Function(T failedResponce) notFound,
+    required TResult Function(T failedResponce) internal,
+    required TResult Function(T failedResponce) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T failedRequest)? badRequest,
-    TResult? Function(T failedRequest)? unauthenticated,
-    TResult? Function(T failedRequest)? forbidden,
-    TResult? Function(T failedRequest)? notFound,
-    TResult? Function(T failedRequest)? internal,
-    TResult? Function(T failedRequest)? unknown,
+    TResult? Function(T failedResponce)? badRequest,
+    TResult? Function(T failedResponce)? unauthenticated,
+    TResult? Function(T failedResponce)? forbidden,
+    TResult? Function(T failedResponce)? notFound,
+    TResult? Function(T failedResponce)? internal,
+    TResult? Function(T failedResponce)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedRequest)? badRequest,
-    TResult Function(T failedRequest)? unauthenticated,
-    TResult Function(T failedRequest)? forbidden,
-    TResult Function(T failedRequest)? notFound,
-    TResult Function(T failedRequest)? internal,
-    TResult Function(T failedRequest)? unknown,
+    TResult Function(T failedResponce)? badRequest,
+    TResult Function(T failedResponce)? unauthenticated,
+    TResult Function(T failedResponce)? forbidden,
+    TResult Function(T failedResponce)? notFound,
+    TResult Function(T failedResponce)? internal,
+    TResult Function(T failedResponce)? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -91,7 +91,7 @@ abstract class $PostFailureCopyWith<T, $Res> {
           PostFailure<T> value, $Res Function(PostFailure<T>) then) =
       _$PostFailureCopyWithImpl<T, $Res, PostFailure<T>>;
   @useResult
-  $Res call({T failedRequest});
+  $Res call({T failedResponce});
 }
 
 /// @nodoc
@@ -107,12 +107,12 @@ class _$PostFailureCopyWithImpl<T, $Res, $Val extends PostFailure<T>>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedRequest = null,
+    Object? failedResponce = null,
   }) {
     return _then(_value.copyWith(
-      failedRequest: null == failedRequest
-          ? _value.failedRequest
-          : failedRequest // ignore: cast_nullable_to_non_nullable
+      failedResponce: null == failedResponce
+          ? _value.failedResponce
+          : failedResponce // ignore: cast_nullable_to_non_nullable
               as T,
     ) as $Val);
   }
@@ -126,7 +126,7 @@ abstract class _$$BadRequestCopyWith<T, $Res>
       __$$BadRequestCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({T failedRequest});
+  $Res call({T failedResponce});
 }
 
 /// @nodoc
@@ -140,12 +140,12 @@ class __$$BadRequestCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedRequest = null,
+    Object? failedResponce = null,
   }) {
     return _then(_$BadRequest<T>(
-      failedRequest: null == failedRequest
-          ? _value.failedRequest
-          : failedRequest // ignore: cast_nullable_to_non_nullable
+      failedResponce: null == failedResponce
+          ? _value.failedResponce
+          : failedResponce // ignore: cast_nullable_to_non_nullable
               as T,
     ));
   }
@@ -154,14 +154,14 @@ class __$$BadRequestCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$BadRequest<T> implements BadRequest<T> {
-  const _$BadRequest({required this.failedRequest});
+  const _$BadRequest({required this.failedResponce});
 
   @override
-  final T failedRequest;
+  final T failedResponce;
 
   @override
   String toString() {
-    return 'PostFailure<$T>.badRequest(failedRequest: $failedRequest)';
+    return 'PostFailure<$T>.badRequest(failedResponce: $failedResponce)';
   }
 
   @override
@@ -170,12 +170,12 @@ class _$BadRequest<T> implements BadRequest<T> {
         (other.runtimeType == runtimeType &&
             other is _$BadRequest<T> &&
             const DeepCollectionEquality()
-                .equals(other.failedRequest, failedRequest));
+                .equals(other.failedResponce, failedResponce));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedRequest));
+      runtimeType, const DeepCollectionEquality().hash(failedResponce));
 
   @JsonKey(ignore: true)
   @override
@@ -186,42 +186,42 @@ class _$BadRequest<T> implements BadRequest<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedRequest) badRequest,
-    required TResult Function(T failedRequest) unauthenticated,
-    required TResult Function(T failedRequest) forbidden,
-    required TResult Function(T failedRequest) notFound,
-    required TResult Function(T failedRequest) internal,
-    required TResult Function(T failedRequest) unknown,
+    required TResult Function(T failedResponce) badRequest,
+    required TResult Function(T failedResponce) unauthenticated,
+    required TResult Function(T failedResponce) forbidden,
+    required TResult Function(T failedResponce) notFound,
+    required TResult Function(T failedResponce) internal,
+    required TResult Function(T failedResponce) unknown,
   }) {
-    return badRequest(failedRequest);
+    return badRequest(failedResponce);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T failedRequest)? badRequest,
-    TResult? Function(T failedRequest)? unauthenticated,
-    TResult? Function(T failedRequest)? forbidden,
-    TResult? Function(T failedRequest)? notFound,
-    TResult? Function(T failedRequest)? internal,
-    TResult? Function(T failedRequest)? unknown,
+    TResult? Function(T failedResponce)? badRequest,
+    TResult? Function(T failedResponce)? unauthenticated,
+    TResult? Function(T failedResponce)? forbidden,
+    TResult? Function(T failedResponce)? notFound,
+    TResult? Function(T failedResponce)? internal,
+    TResult? Function(T failedResponce)? unknown,
   }) {
-    return badRequest?.call(failedRequest);
+    return badRequest?.call(failedResponce);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedRequest)? badRequest,
-    TResult Function(T failedRequest)? unauthenticated,
-    TResult Function(T failedRequest)? forbidden,
-    TResult Function(T failedRequest)? notFound,
-    TResult Function(T failedRequest)? internal,
-    TResult Function(T failedRequest)? unknown,
+    TResult Function(T failedResponce)? badRequest,
+    TResult Function(T failedResponce)? unauthenticated,
+    TResult Function(T failedResponce)? forbidden,
+    TResult Function(T failedResponce)? notFound,
+    TResult Function(T failedResponce)? internal,
+    TResult Function(T failedResponce)? unknown,
     required TResult orElse(),
   }) {
     if (badRequest != null) {
-      return badRequest(failedRequest);
+      return badRequest(failedResponce);
     }
     return orElse();
   }
@@ -271,10 +271,10 @@ class _$BadRequest<T> implements BadRequest<T> {
 }
 
 abstract class BadRequest<T> implements PostFailure<T> {
-  const factory BadRequest({required final T failedRequest}) = _$BadRequest<T>;
+  const factory BadRequest({required final T failedResponce}) = _$BadRequest<T>;
 
   @override
-  T get failedRequest;
+  T get failedResponce;
   @override
   @JsonKey(ignore: true)
   _$$BadRequestCopyWith<T, _$BadRequest<T>> get copyWith =>
@@ -289,7 +289,7 @@ abstract class _$$UnauthenticatedCopyWith<T, $Res>
       __$$UnauthenticatedCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({T failedRequest});
+  $Res call({T failedResponce});
 }
 
 /// @nodoc
@@ -303,12 +303,12 @@ class __$$UnauthenticatedCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedRequest = null,
+    Object? failedResponce = null,
   }) {
     return _then(_$Unauthenticated<T>(
-      failedRequest: null == failedRequest
-          ? _value.failedRequest
-          : failedRequest // ignore: cast_nullable_to_non_nullable
+      failedResponce: null == failedResponce
+          ? _value.failedResponce
+          : failedResponce // ignore: cast_nullable_to_non_nullable
               as T,
     ));
   }
@@ -317,14 +317,14 @@ class __$$UnauthenticatedCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$Unauthenticated<T> implements Unauthenticated<T> {
-  const _$Unauthenticated({required this.failedRequest});
+  const _$Unauthenticated({required this.failedResponce});
 
   @override
-  final T failedRequest;
+  final T failedResponce;
 
   @override
   String toString() {
-    return 'PostFailure<$T>.unauthenticated(failedRequest: $failedRequest)';
+    return 'PostFailure<$T>.unauthenticated(failedResponce: $failedResponce)';
   }
 
   @override
@@ -333,12 +333,12 @@ class _$Unauthenticated<T> implements Unauthenticated<T> {
         (other.runtimeType == runtimeType &&
             other is _$Unauthenticated<T> &&
             const DeepCollectionEquality()
-                .equals(other.failedRequest, failedRequest));
+                .equals(other.failedResponce, failedResponce));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedRequest));
+      runtimeType, const DeepCollectionEquality().hash(failedResponce));
 
   @JsonKey(ignore: true)
   @override
@@ -350,42 +350,42 @@ class _$Unauthenticated<T> implements Unauthenticated<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedRequest) badRequest,
-    required TResult Function(T failedRequest) unauthenticated,
-    required TResult Function(T failedRequest) forbidden,
-    required TResult Function(T failedRequest) notFound,
-    required TResult Function(T failedRequest) internal,
-    required TResult Function(T failedRequest) unknown,
+    required TResult Function(T failedResponce) badRequest,
+    required TResult Function(T failedResponce) unauthenticated,
+    required TResult Function(T failedResponce) forbidden,
+    required TResult Function(T failedResponce) notFound,
+    required TResult Function(T failedResponce) internal,
+    required TResult Function(T failedResponce) unknown,
   }) {
-    return unauthenticated(failedRequest);
+    return unauthenticated(failedResponce);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T failedRequest)? badRequest,
-    TResult? Function(T failedRequest)? unauthenticated,
-    TResult? Function(T failedRequest)? forbidden,
-    TResult? Function(T failedRequest)? notFound,
-    TResult? Function(T failedRequest)? internal,
-    TResult? Function(T failedRequest)? unknown,
+    TResult? Function(T failedResponce)? badRequest,
+    TResult? Function(T failedResponce)? unauthenticated,
+    TResult? Function(T failedResponce)? forbidden,
+    TResult? Function(T failedResponce)? notFound,
+    TResult? Function(T failedResponce)? internal,
+    TResult? Function(T failedResponce)? unknown,
   }) {
-    return unauthenticated?.call(failedRequest);
+    return unauthenticated?.call(failedResponce);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedRequest)? badRequest,
-    TResult Function(T failedRequest)? unauthenticated,
-    TResult Function(T failedRequest)? forbidden,
-    TResult Function(T failedRequest)? notFound,
-    TResult Function(T failedRequest)? internal,
-    TResult Function(T failedRequest)? unknown,
+    TResult Function(T failedResponce)? badRequest,
+    TResult Function(T failedResponce)? unauthenticated,
+    TResult Function(T failedResponce)? forbidden,
+    TResult Function(T failedResponce)? notFound,
+    TResult Function(T failedResponce)? internal,
+    TResult Function(T failedResponce)? unknown,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
-      return unauthenticated(failedRequest);
+      return unauthenticated(failedResponce);
     }
     return orElse();
   }
@@ -435,11 +435,11 @@ class _$Unauthenticated<T> implements Unauthenticated<T> {
 }
 
 abstract class Unauthenticated<T> implements PostFailure<T> {
-  const factory Unauthenticated({required final T failedRequest}) =
+  const factory Unauthenticated({required final T failedResponce}) =
       _$Unauthenticated<T>;
 
   @override
-  T get failedRequest;
+  T get failedResponce;
   @override
   @JsonKey(ignore: true)
   _$$UnauthenticatedCopyWith<T, _$Unauthenticated<T>> get copyWith =>
@@ -454,7 +454,7 @@ abstract class _$$ForbiddenCopyWith<T, $Res>
       __$$ForbiddenCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({T failedRequest});
+  $Res call({T failedResponce});
 }
 
 /// @nodoc
@@ -468,12 +468,12 @@ class __$$ForbiddenCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedRequest = null,
+    Object? failedResponce = null,
   }) {
     return _then(_$Forbidden<T>(
-      failedRequest: null == failedRequest
-          ? _value.failedRequest
-          : failedRequest // ignore: cast_nullable_to_non_nullable
+      failedResponce: null == failedResponce
+          ? _value.failedResponce
+          : failedResponce // ignore: cast_nullable_to_non_nullable
               as T,
     ));
   }
@@ -482,14 +482,14 @@ class __$$ForbiddenCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$Forbidden<T> implements Forbidden<T> {
-  const _$Forbidden({required this.failedRequest});
+  const _$Forbidden({required this.failedResponce});
 
   @override
-  final T failedRequest;
+  final T failedResponce;
 
   @override
   String toString() {
-    return 'PostFailure<$T>.forbidden(failedRequest: $failedRequest)';
+    return 'PostFailure<$T>.forbidden(failedResponce: $failedResponce)';
   }
 
   @override
@@ -498,12 +498,12 @@ class _$Forbidden<T> implements Forbidden<T> {
         (other.runtimeType == runtimeType &&
             other is _$Forbidden<T> &&
             const DeepCollectionEquality()
-                .equals(other.failedRequest, failedRequest));
+                .equals(other.failedResponce, failedResponce));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedRequest));
+      runtimeType, const DeepCollectionEquality().hash(failedResponce));
 
   @JsonKey(ignore: true)
   @override
@@ -514,42 +514,42 @@ class _$Forbidden<T> implements Forbidden<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedRequest) badRequest,
-    required TResult Function(T failedRequest) unauthenticated,
-    required TResult Function(T failedRequest) forbidden,
-    required TResult Function(T failedRequest) notFound,
-    required TResult Function(T failedRequest) internal,
-    required TResult Function(T failedRequest) unknown,
+    required TResult Function(T failedResponce) badRequest,
+    required TResult Function(T failedResponce) unauthenticated,
+    required TResult Function(T failedResponce) forbidden,
+    required TResult Function(T failedResponce) notFound,
+    required TResult Function(T failedResponce) internal,
+    required TResult Function(T failedResponce) unknown,
   }) {
-    return forbidden(failedRequest);
+    return forbidden(failedResponce);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T failedRequest)? badRequest,
-    TResult? Function(T failedRequest)? unauthenticated,
-    TResult? Function(T failedRequest)? forbidden,
-    TResult? Function(T failedRequest)? notFound,
-    TResult? Function(T failedRequest)? internal,
-    TResult? Function(T failedRequest)? unknown,
+    TResult? Function(T failedResponce)? badRequest,
+    TResult? Function(T failedResponce)? unauthenticated,
+    TResult? Function(T failedResponce)? forbidden,
+    TResult? Function(T failedResponce)? notFound,
+    TResult? Function(T failedResponce)? internal,
+    TResult? Function(T failedResponce)? unknown,
   }) {
-    return forbidden?.call(failedRequest);
+    return forbidden?.call(failedResponce);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedRequest)? badRequest,
-    TResult Function(T failedRequest)? unauthenticated,
-    TResult Function(T failedRequest)? forbidden,
-    TResult Function(T failedRequest)? notFound,
-    TResult Function(T failedRequest)? internal,
-    TResult Function(T failedRequest)? unknown,
+    TResult Function(T failedResponce)? badRequest,
+    TResult Function(T failedResponce)? unauthenticated,
+    TResult Function(T failedResponce)? forbidden,
+    TResult Function(T failedResponce)? notFound,
+    TResult Function(T failedResponce)? internal,
+    TResult Function(T failedResponce)? unknown,
     required TResult orElse(),
   }) {
     if (forbidden != null) {
-      return forbidden(failedRequest);
+      return forbidden(failedResponce);
     }
     return orElse();
   }
@@ -599,10 +599,10 @@ class _$Forbidden<T> implements Forbidden<T> {
 }
 
 abstract class Forbidden<T> implements PostFailure<T> {
-  const factory Forbidden({required final T failedRequest}) = _$Forbidden<T>;
+  const factory Forbidden({required final T failedResponce}) = _$Forbidden<T>;
 
   @override
-  T get failedRequest;
+  T get failedResponce;
   @override
   @JsonKey(ignore: true)
   _$$ForbiddenCopyWith<T, _$Forbidden<T>> get copyWith =>
@@ -617,7 +617,7 @@ abstract class _$$NotFoundCopyWith<T, $Res>
       __$$NotFoundCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({T failedRequest});
+  $Res call({T failedResponce});
 }
 
 /// @nodoc
@@ -631,12 +631,12 @@ class __$$NotFoundCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedRequest = null,
+    Object? failedResponce = null,
   }) {
     return _then(_$NotFound<T>(
-      failedRequest: null == failedRequest
-          ? _value.failedRequest
-          : failedRequest // ignore: cast_nullable_to_non_nullable
+      failedResponce: null == failedResponce
+          ? _value.failedResponce
+          : failedResponce // ignore: cast_nullable_to_non_nullable
               as T,
     ));
   }
@@ -645,14 +645,14 @@ class __$$NotFoundCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$NotFound<T> implements NotFound<T> {
-  const _$NotFound({required this.failedRequest});
+  const _$NotFound({required this.failedResponce});
 
   @override
-  final T failedRequest;
+  final T failedResponce;
 
   @override
   String toString() {
-    return 'PostFailure<$T>.notFound(failedRequest: $failedRequest)';
+    return 'PostFailure<$T>.notFound(failedResponce: $failedResponce)';
   }
 
   @override
@@ -661,12 +661,12 @@ class _$NotFound<T> implements NotFound<T> {
         (other.runtimeType == runtimeType &&
             other is _$NotFound<T> &&
             const DeepCollectionEquality()
-                .equals(other.failedRequest, failedRequest));
+                .equals(other.failedResponce, failedResponce));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedRequest));
+      runtimeType, const DeepCollectionEquality().hash(failedResponce));
 
   @JsonKey(ignore: true)
   @override
@@ -677,42 +677,42 @@ class _$NotFound<T> implements NotFound<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedRequest) badRequest,
-    required TResult Function(T failedRequest) unauthenticated,
-    required TResult Function(T failedRequest) forbidden,
-    required TResult Function(T failedRequest) notFound,
-    required TResult Function(T failedRequest) internal,
-    required TResult Function(T failedRequest) unknown,
+    required TResult Function(T failedResponce) badRequest,
+    required TResult Function(T failedResponce) unauthenticated,
+    required TResult Function(T failedResponce) forbidden,
+    required TResult Function(T failedResponce) notFound,
+    required TResult Function(T failedResponce) internal,
+    required TResult Function(T failedResponce) unknown,
   }) {
-    return notFound(failedRequest);
+    return notFound(failedResponce);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T failedRequest)? badRequest,
-    TResult? Function(T failedRequest)? unauthenticated,
-    TResult? Function(T failedRequest)? forbidden,
-    TResult? Function(T failedRequest)? notFound,
-    TResult? Function(T failedRequest)? internal,
-    TResult? Function(T failedRequest)? unknown,
+    TResult? Function(T failedResponce)? badRequest,
+    TResult? Function(T failedResponce)? unauthenticated,
+    TResult? Function(T failedResponce)? forbidden,
+    TResult? Function(T failedResponce)? notFound,
+    TResult? Function(T failedResponce)? internal,
+    TResult? Function(T failedResponce)? unknown,
   }) {
-    return notFound?.call(failedRequest);
+    return notFound?.call(failedResponce);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedRequest)? badRequest,
-    TResult Function(T failedRequest)? unauthenticated,
-    TResult Function(T failedRequest)? forbidden,
-    TResult Function(T failedRequest)? notFound,
-    TResult Function(T failedRequest)? internal,
-    TResult Function(T failedRequest)? unknown,
+    TResult Function(T failedResponce)? badRequest,
+    TResult Function(T failedResponce)? unauthenticated,
+    TResult Function(T failedResponce)? forbidden,
+    TResult Function(T failedResponce)? notFound,
+    TResult Function(T failedResponce)? internal,
+    TResult Function(T failedResponce)? unknown,
     required TResult orElse(),
   }) {
     if (notFound != null) {
-      return notFound(failedRequest);
+      return notFound(failedResponce);
     }
     return orElse();
   }
@@ -762,10 +762,10 @@ class _$NotFound<T> implements NotFound<T> {
 }
 
 abstract class NotFound<T> implements PostFailure<T> {
-  const factory NotFound({required final T failedRequest}) = _$NotFound<T>;
+  const factory NotFound({required final T failedResponce}) = _$NotFound<T>;
 
   @override
-  T get failedRequest;
+  T get failedResponce;
   @override
   @JsonKey(ignore: true)
   _$$NotFoundCopyWith<T, _$NotFound<T>> get copyWith =>
@@ -780,7 +780,7 @@ abstract class _$$InternalCopyWith<T, $Res>
       __$$InternalCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({T failedRequest});
+  $Res call({T failedResponce});
 }
 
 /// @nodoc
@@ -794,12 +794,12 @@ class __$$InternalCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedRequest = null,
+    Object? failedResponce = null,
   }) {
     return _then(_$Internal<T>(
-      failedRequest: null == failedRequest
-          ? _value.failedRequest
-          : failedRequest // ignore: cast_nullable_to_non_nullable
+      failedResponce: null == failedResponce
+          ? _value.failedResponce
+          : failedResponce // ignore: cast_nullable_to_non_nullable
               as T,
     ));
   }
@@ -808,14 +808,14 @@ class __$$InternalCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$Internal<T> implements Internal<T> {
-  const _$Internal({required this.failedRequest});
+  const _$Internal({required this.failedResponce});
 
   @override
-  final T failedRequest;
+  final T failedResponce;
 
   @override
   String toString() {
-    return 'PostFailure<$T>.internal(failedRequest: $failedRequest)';
+    return 'PostFailure<$T>.internal(failedResponce: $failedResponce)';
   }
 
   @override
@@ -824,12 +824,12 @@ class _$Internal<T> implements Internal<T> {
         (other.runtimeType == runtimeType &&
             other is _$Internal<T> &&
             const DeepCollectionEquality()
-                .equals(other.failedRequest, failedRequest));
+                .equals(other.failedResponce, failedResponce));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedRequest));
+      runtimeType, const DeepCollectionEquality().hash(failedResponce));
 
   @JsonKey(ignore: true)
   @override
@@ -840,42 +840,42 @@ class _$Internal<T> implements Internal<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedRequest) badRequest,
-    required TResult Function(T failedRequest) unauthenticated,
-    required TResult Function(T failedRequest) forbidden,
-    required TResult Function(T failedRequest) notFound,
-    required TResult Function(T failedRequest) internal,
-    required TResult Function(T failedRequest) unknown,
+    required TResult Function(T failedResponce) badRequest,
+    required TResult Function(T failedResponce) unauthenticated,
+    required TResult Function(T failedResponce) forbidden,
+    required TResult Function(T failedResponce) notFound,
+    required TResult Function(T failedResponce) internal,
+    required TResult Function(T failedResponce) unknown,
   }) {
-    return internal(failedRequest);
+    return internal(failedResponce);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T failedRequest)? badRequest,
-    TResult? Function(T failedRequest)? unauthenticated,
-    TResult? Function(T failedRequest)? forbidden,
-    TResult? Function(T failedRequest)? notFound,
-    TResult? Function(T failedRequest)? internal,
-    TResult? Function(T failedRequest)? unknown,
+    TResult? Function(T failedResponce)? badRequest,
+    TResult? Function(T failedResponce)? unauthenticated,
+    TResult? Function(T failedResponce)? forbidden,
+    TResult? Function(T failedResponce)? notFound,
+    TResult? Function(T failedResponce)? internal,
+    TResult? Function(T failedResponce)? unknown,
   }) {
-    return internal?.call(failedRequest);
+    return internal?.call(failedResponce);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedRequest)? badRequest,
-    TResult Function(T failedRequest)? unauthenticated,
-    TResult Function(T failedRequest)? forbidden,
-    TResult Function(T failedRequest)? notFound,
-    TResult Function(T failedRequest)? internal,
-    TResult Function(T failedRequest)? unknown,
+    TResult Function(T failedResponce)? badRequest,
+    TResult Function(T failedResponce)? unauthenticated,
+    TResult Function(T failedResponce)? forbidden,
+    TResult Function(T failedResponce)? notFound,
+    TResult Function(T failedResponce)? internal,
+    TResult Function(T failedResponce)? unknown,
     required TResult orElse(),
   }) {
     if (internal != null) {
-      return internal(failedRequest);
+      return internal(failedResponce);
     }
     return orElse();
   }
@@ -925,10 +925,10 @@ class _$Internal<T> implements Internal<T> {
 }
 
 abstract class Internal<T> implements PostFailure<T> {
-  const factory Internal({required final T failedRequest}) = _$Internal<T>;
+  const factory Internal({required final T failedResponce}) = _$Internal<T>;
 
   @override
-  T get failedRequest;
+  T get failedResponce;
   @override
   @JsonKey(ignore: true)
   _$$InternalCopyWith<T, _$Internal<T>> get copyWith =>
@@ -943,7 +943,7 @@ abstract class _$$UnknownCopyWith<T, $Res>
       __$$UnknownCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({T failedRequest});
+  $Res call({T failedResponce});
 }
 
 /// @nodoc
@@ -957,12 +957,12 @@ class __$$UnknownCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedRequest = null,
+    Object? failedResponce = null,
   }) {
     return _then(_$Unknown<T>(
-      failedRequest: null == failedRequest
-          ? _value.failedRequest
-          : failedRequest // ignore: cast_nullable_to_non_nullable
+      failedResponce: null == failedResponce
+          ? _value.failedResponce
+          : failedResponce // ignore: cast_nullable_to_non_nullable
               as T,
     ));
   }
@@ -971,14 +971,14 @@ class __$$UnknownCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$Unknown<T> implements Unknown<T> {
-  const _$Unknown({required this.failedRequest});
+  const _$Unknown({required this.failedResponce});
 
   @override
-  final T failedRequest;
+  final T failedResponce;
 
   @override
   String toString() {
-    return 'PostFailure<$T>.unknown(failedRequest: $failedRequest)';
+    return 'PostFailure<$T>.unknown(failedResponce: $failedResponce)';
   }
 
   @override
@@ -987,12 +987,12 @@ class _$Unknown<T> implements Unknown<T> {
         (other.runtimeType == runtimeType &&
             other is _$Unknown<T> &&
             const DeepCollectionEquality()
-                .equals(other.failedRequest, failedRequest));
+                .equals(other.failedResponce, failedResponce));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedRequest));
+      runtimeType, const DeepCollectionEquality().hash(failedResponce));
 
   @JsonKey(ignore: true)
   @override
@@ -1003,42 +1003,42 @@ class _$Unknown<T> implements Unknown<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedRequest) badRequest,
-    required TResult Function(T failedRequest) unauthenticated,
-    required TResult Function(T failedRequest) forbidden,
-    required TResult Function(T failedRequest) notFound,
-    required TResult Function(T failedRequest) internal,
-    required TResult Function(T failedRequest) unknown,
+    required TResult Function(T failedResponce) badRequest,
+    required TResult Function(T failedResponce) unauthenticated,
+    required TResult Function(T failedResponce) forbidden,
+    required TResult Function(T failedResponce) notFound,
+    required TResult Function(T failedResponce) internal,
+    required TResult Function(T failedResponce) unknown,
   }) {
-    return unknown(failedRequest);
+    return unknown(failedResponce);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T failedRequest)? badRequest,
-    TResult? Function(T failedRequest)? unauthenticated,
-    TResult? Function(T failedRequest)? forbidden,
-    TResult? Function(T failedRequest)? notFound,
-    TResult? Function(T failedRequest)? internal,
-    TResult? Function(T failedRequest)? unknown,
+    TResult? Function(T failedResponce)? badRequest,
+    TResult? Function(T failedResponce)? unauthenticated,
+    TResult? Function(T failedResponce)? forbidden,
+    TResult? Function(T failedResponce)? notFound,
+    TResult? Function(T failedResponce)? internal,
+    TResult? Function(T failedResponce)? unknown,
   }) {
-    return unknown?.call(failedRequest);
+    return unknown?.call(failedResponce);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedRequest)? badRequest,
-    TResult Function(T failedRequest)? unauthenticated,
-    TResult Function(T failedRequest)? forbidden,
-    TResult Function(T failedRequest)? notFound,
-    TResult Function(T failedRequest)? internal,
-    TResult Function(T failedRequest)? unknown,
+    TResult Function(T failedResponce)? badRequest,
+    TResult Function(T failedResponce)? unauthenticated,
+    TResult Function(T failedResponce)? forbidden,
+    TResult Function(T failedResponce)? notFound,
+    TResult Function(T failedResponce)? internal,
+    TResult Function(T failedResponce)? unknown,
     required TResult orElse(),
   }) {
     if (unknown != null) {
-      return unknown(failedRequest);
+      return unknown(failedResponce);
     }
     return orElse();
   }
@@ -1088,10 +1088,10 @@ class _$Unknown<T> implements Unknown<T> {
 }
 
 abstract class Unknown<T> implements PostFailure<T> {
-  const factory Unknown({required final T failedRequest}) = _$Unknown<T>;
+  const factory Unknown({required final T failedResponce}) = _$Unknown<T>;
 
   @override
-  T get failedRequest;
+  T get failedResponce;
   @override
   @JsonKey(ignore: true)
   _$$UnknownCopyWith<T, _$Unknown<T>> get copyWith =>

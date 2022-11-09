@@ -4,5 +4,5 @@ import '../core/failures.dart';
 import 'posts.dart';
 
 abstract class IPostsRepository {
-  Future<Either<PostFailure, Posts>> getPosts();
+  Future<Either<PostFailure, List<Post>>> getPosts();
 }

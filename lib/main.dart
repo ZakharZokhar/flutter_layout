@@ -1,9 +1,11 @@
+import 'package:ch_layout/chopper_and_posts/presentation/posts/posts_page.dart';
 import 'package:ch_layout/products/bloc/products_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
+import 'chopper_and_posts/application/posts/posts_bloc.dart';
 import 'main.config.dart';
 import 'widgets/top_bar_widget.dart';
 import 'widgets/purchase_list_with_builder.dart';
@@ -55,8 +57,8 @@ class MyPage extends StatelessWidget {
           const TopBar(),
           BlocProvider(
               create: (_) =>
-                  getIt<ProductsBloc>()..add(const ProductsEvent.initialized()),
-              child: const Expanded(child: PurchaseListWithBuilder()))
+                  getIt<PostsBloc>()..add(const PostsEvent.initialized()),
+              child: const Expanded(child: PostsListWithBuilder()))
         ],
       ),
       floatingActionButton: FloatingActionButton(
