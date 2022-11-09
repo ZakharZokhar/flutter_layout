@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:ch_layout/chopper_and_posts/infrastructure/posts/posts_dto.dart';
-import 'package:ch_layout/infrastructure/api_service.dart';
 
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
@@ -9,6 +8,7 @@ import 'package:injectable/injectable.dart';
 import '../../domain/core/failures.dart';
 import '../../domain/posts/i_posts_repository.dart';
 import '../../domain/posts/posts.dart';
+import '../api_service.dart';
 
 @LazySingleton(as: IPostsRepository)
 class ChopperPostsRepository implements IPostsRepository {
